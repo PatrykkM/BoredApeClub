@@ -24,6 +24,9 @@ export default {
         68: "17rem",
         66: "16.5rem",
       },
+      borderColor: {
+        "Lighter-Grey": "#29282D",
+      },
     },
   },
   plugins: [],
