@@ -9,7 +9,7 @@ import GetNFT from "./components/GetNFT";
 function App() {
   return (
     <Provider store={store}>
-      <div className="flex flex-col items-center  justify-center    font-kanit bg-main-background min-w-80 overflow-hidden box-border">
+      <div className="flex flex-col items-center  justify-center    font-kanit bg-main-background min-w-80 overflow-hidden box-border p-0">
         <div className="w-80 flex  items-center flex-col ">
           <Header />
           <Introduction />
