@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { store } from "./ReduxToolkit/store";
 import NFTInsights from "./components/NFTInsights";
 import GetNFT from "./components/GetNFT";
+import Faq from "./components/Faq";
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
           <NFTInsights />
         </div>
         <GetNFT />
+        <div className="w-80 flex  items-center flex-col ">
+          <Faq />
+        </div>
       </div>
     </Provider>
   );

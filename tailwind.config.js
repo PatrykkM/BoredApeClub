@@ -12,11 +12,13 @@ export default {
         "Light-Green": "#8FFF6A",
         "Light-Grey": "#1B191C",
         "Lighter-Grey": "#252527",
+        "Darker-White": "#EEEEEE",
       },
       colors: {
         "uninportant-text": "#888888",
         "Light-Green": "#8FFF6A",
         "Custom-Grey": "#1C1C1E",
+        "Darker-White": "#EEEEEE",
       },
       height: {
         88: "22rem",

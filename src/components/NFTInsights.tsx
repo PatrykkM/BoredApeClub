@@ -26,7 +26,7 @@ const NFTInsights = () => {
         <div className="absolute bg-Img-background w-80 h-66 bottom-0 left-1/2 transform -translate-x-1/2 rounded-lg"></div>
       </div>
       <div className="w-full relative flex items-center justify-center mt-9">
-        <button className="flex justify-center items-center bg-Light-Green  py-3 px-6 rounded-xl font-medium">
+        <button className=" bg-Light-Green  py-3 px-6 rounded-xl font-medium">
           Join our Club
         </button>
         <div className=" absolute border border-uninportant-text w-1/5 right-1">
