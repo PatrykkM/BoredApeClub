@@ -11,7 +11,7 @@ export default {
         "Img-background": "#1C1C1E",
         "Light-Green": "#8FFF6A",
         "Light-Grey": "#1B191C",
-        "Lighter-Grey": "#29282D",
+        "Lighter-Grey": "#252527",
       },
       colors: {
         "uninportant-text": "#888888",
