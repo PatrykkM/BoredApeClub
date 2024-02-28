@@ -23,6 +23,7 @@ export default {
         92: "23rem",
         68: "17rem",
         66: "16.5rem",
+        100: "25rem",
       },
       borderColor: {
         "Lighter-Grey": "#29282D",

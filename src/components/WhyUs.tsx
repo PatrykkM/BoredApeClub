@@ -1,8 +1,64 @@
+import RichApe from "../assets/apesIMG/RichMonkeyIntroduction.png";
+import NetworkingApe from "../assets/apesIMG/MillionareNetworkingMonkeyIntroduction.png";
+import PartyApe from "../assets/apesIMG/PartyMonekyIntroduction.png";
+import ArmyApe from "../assets/apesIMG/ArmyMonkeyIntroduction.png";
+
 import { useState } from "react";
 
 const WhyUs = () => {
   const [activeOption, setActiveOption] = useState(1);
   const options = [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }];
+  const optionComponents: { [index: number]: JSX.Element } = {
+    1: (
+      <div className="flex flex-col  text-uninportant-text font-light w-80 h-100 ">
+        <div>
+          Boost your portfolio with our NFTs, promising an annual ROI of 41%
+        </div>
+        <div className="grow flex items-center ">
+          <img
+            src={RichApe}
+            className=" object-cover  w-80 h-80 rounded-3xl flex-grow"
+          />
+        </div>
+      </div>
+    ),
+
+    2: (
+      <div className="flex flex-col text-uninportant-text font-light w-80 h-100">
+        <div>Our NFTs grant access to members only events.</div>
+        <div className="grow flex items-center ">
+          <img
+            src={PartyApe}
+            className=" object-cover  w-80 h-80 rounded-3xl flex-grow"
+          />
+        </div>
+      </div>
+    ),
+    3: (
+      <div className="flex flex-col text-uninportant-text font-light w-80 h-100">
+        <div>Our NFTs are your gateway to networking with millionaires</div>
+        <div className="grow flex items-center ">
+          <img
+            src={NetworkingApe}
+            className=" object-cover  w-80 h-80 rounded-3xl flex-grow"
+          />
+        </div>
+      </div>
+    ),
+    4: (
+      <div className="flex flex-col text-uninportant-text font-light w-80 h-100">
+        <div>
+          Protect your assets with our NFTs, designed for unmatched security.
+        </div>
+        <div className="grow flex items-center ">
+          <img
+            src={ArmyApe}
+            className=" object-cover  w-80 h-80 rounded-3xl flex-grow"
+          />
+        </div>
+      </div>
+    ),
+  };
   return (
     <section className="bg-Light-Grey w-full flex items-center justify-center mt-12">
       <div className="flex flex-col justify-center items-center w-80 mt-6">
@@ -28,18 +84,7 @@ const WhyUs = () => {
             </div>
           ))}
         </div>
-        {activeOption === 1 ? (
-          <div className="bg-red-500 w-full h-52"></div>
-        ) : null}
-        {activeOption === 2 ? (
-          <div className="bg-emerald-500 w-full h-52"></div>
-        ) : null}
-        {activeOption === 3 ? (
-          <div className="bg-sky-600 w-full h-52"></div>
-        ) : null}
-        {activeOption === 4 ? (
-          <div className="bg-orange-500 w-full h-52"></div>
-        ) : null}
+        {optionComponents[activeOption]}
       </div>
     </section>
   );
