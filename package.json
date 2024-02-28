@@ -1,8 +1,8 @@
 {
   "name": "bored-ape",
+  "homepage": "https://PatrykkM.github.io/BoredApeClub",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://PatrykkM.github.io/BoredApeClub",
   "type": "module",
   "scripts": {
     "dev": "vite",
