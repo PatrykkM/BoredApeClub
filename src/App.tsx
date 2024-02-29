@@ -6,23 +6,25 @@ import { store } from "./ReduxToolkit/store";
 import NFTInsights from "./components/NFTInsights";
 import GetNFT from "./components/GetNFT";
 import Faq from "./components/Faq";
+import PreFotter from "./components/PreFooter";
 
 function App() {
   return (
     <Provider store={store}>
-      <div className="flex flex-col items-center  justify-center    font-kanit bg-main-background min-w-80 overflow-hidden box-border p-0">
-        <div className="w-80 flex  items-center flex-col ">
+      <div className="flex flex-col items-center  justify-center    font-kanit bg-main-background min-w-80 overflow-hidden box-border ">
+        <div className=" flex  items-center flex-col max-w-lg">
           <Header />
           <Introduction />
         </div>
         <WhyUs />
-        <div className="w-80 flex  items-center flex-col ">
+        <div className=" flex  items-center flex-col  ">
           <NFTInsights />
         </div>
         <GetNFT />
-        <div className="w-80 flex  items-center flex-col ">
+        <div className=" flex  items-center flex-col ">
           <Faq />
         </div>
+        <PreFotter />
       </div>
     </Provider>
   );

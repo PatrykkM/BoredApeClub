@@ -25,24 +25,24 @@ const Faq = () => {
   ];
   console.log(activeNumber);
   return (
-    <section className="flex flex-col mt-12">
+    <section className="flex flex-col mt-12 max-w-lg px-5">
       <h3 className="text-Darker-White text-3xl uppercase font-medium">Faq</h3>
-      <div className="mt-6 text-uninportant-text font-light">
+      <div className="mt-6 text-uninportant-text font-light ">
         NFT FAQ is the ultimate aplha group for great & Experienced Flipping
         NFTs
       </div>
-      <div className="flex relative w-80 h-88">
+      <div className="flex relative ">
         <img
           src={mainApe}
           alt="Image of BoredApe"
           className=" object-cover z-10 "
         />
-        <div className="absolute bg-Img-background w-80 h-66 bottom-0 left-1/2 transform -translate-x-1/2 rounded-lg"></div>
+        <div className="absolute bg-Img-background w-full h-4/5 bottom-0 left-1/2 transform -translate-x-1/2 rounded-lg"></div>
       </div>
       <div className="flex flex-col mt-6 ">
         {FaqOptions.map((Faq, id) => (
           <>
-            <div className=" h-auto flex flex-col   text-Darker-White font-light text-xl border-b border-uninportant-text mb-3">
+            <div className="  flex flex-col   text-Darker-White font-light text-xl border-b border-uninportant-text mb-3">
               <div className="flex   justify-between items-center w-full">
                 <div className="mb-1">{Faq.Title}</div>
                 <div
@@ -53,15 +53,15 @@ const Faq = () => {
                 </div>
               </div>
               <div
-                className={`flex items-center   transition-all overflow-hidden mb-2 ${
+                className={`flex items-center   transition-all duration-75 overflow-hidden mb-2 ${
                   activeNumber === id + 1 ? `h-10` : ` h-0`
                 }`}
               >
                 <div
-                  className={` overflow-hidden transition-transform text-uninportant-text text-xs font-light  ${
+                  className={` overflow-hidden transition-all duration-75 text-uninportant-text text-xs font-light  ${
                     activeNumber === id + 1
-                      ? `translate-y-0`
-                      : ` -translate-y-full`
+                      ? ` opacity-100 translate-y-0`
+                      : ` opacity-0 -translate-y-full`
                   }`}
                 >
                   <div>{Faq.desc}</div>

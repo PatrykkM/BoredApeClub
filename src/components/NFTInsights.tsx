@@ -3,7 +3,7 @@ import BubblegumApe from "../assets/apesIMG/BubblegumApeInsights.png";
 
 const NFTInsights = () => {
   return (
-    <section className="flex flex-col items-center  mt-12 mb-12">
+    <section className="relative flex flex-col items-center  my-12 max-w-lg px-5  ">
       <div className="relative w-11/12 border-b-2 border-uninportant-text border-dashed ">
         <div className=" text-xs absolute text-uninportant-text -top-[5px] -left-2">
           <BiSolidLeftArrow className="" />
@@ -17,13 +17,13 @@ const NFTInsights = () => {
         and insights that have helped me identify profitable NFTs and diversify
         my portfolio.
       </p>
-      <div className="flex relative w-80 h-88 -mt-5">
+      <div className="flex relative ">
         <img
           src={BubblegumApe}
           alt="Image of BoredApe"
           className=" object-cover z-10 "
         />
-        <div className="absolute bg-Img-background w-80 h-66 bottom-0 left-1/2 transform -translate-x-1/2 rounded-lg"></div>
+        <div className="absolute bg-Img-background w-full h-4/5 bottom-0 left-1/2 transform -translate-x-1/2 rounded-lg"></div>
       </div>
       <div className="w-full relative flex items-center justify-center mt-9">
         <button className=" bg-Light-Green  py-3 px-6 rounded-xl font-medium">

@@ -33,8 +33,8 @@ const GetNFT = () => {
   ];
 
   return (
-    <section className="flex  justify-center items-center bg-Light-Grey w-full">
-      <div className="relative flex flex-col w-80 items-center justify-center">
+    <section className="  flex  justify-center items-center bg-Light-Grey w-full  ">
+      <div className=" relative flex flex-col  items-center justify-center  max-w-lg p-5">
         <h2 className="text-3xl text-Darker-White font-medium mt-4">
           Get Our NFT here
         </h2>
@@ -42,18 +42,17 @@ const GetNFT = () => {
           NFT Signals is the ultimate alpha group for beginner and experienced
           traders to make profit flipping NFTs.
         </p>
-        <div className=" w-full flex flex-wrap mt-3 mb-12">
+        <div className=" w-full  flex flex-wrap mt-3 mb-12">
           {allNFT.map((NFT, id) => (
             <div
-              className={` w-1/2 mt-4 ${(id + 1) % 2 === 0 ? `pl-2` : `pr-2`} ${
-                id > 5 && active ? `hidden` : `null`
-              } 
-              `}
+              className={`w-1/2 mt-4 ${(id + 1) % 2 === 0 ? `pl-2` : `pr-2`} ${
+                id > 5 && active ? `hidden` : null
+              } `}
             >
-              <div className=" bg-Lighter-Grey  w-full flex flex-col rounded-lg p-2 ">
+              <div className="transition-all bg-Lighter-Grey  w-full flex flex-col rounded-lg p-2 ">
                 <img
                   src={NFT.Img}
-                  className=" object-cover  w-full h-36 rounded-lg"
+                  className="object-cover transition-all h-36 xs:h-auto   w-full  rounded-lg"
                 />
                 <div className="flex w-full justify-between items-center text-white  mt-3 text-sm ">
                   <div className="font-light">{NFT.ApeID}</div>
@@ -71,12 +70,9 @@ const GetNFT = () => {
           ))}
         </div>
         <div className="overflow-hidden flex justify-center items-center h-12 w-12 bg-main-background absolute -bottom-6 rounded-full border-2 border-Light-Green">
-          <div
-            className="text-Light-Green bg-Light-Grey"
-            onClick={() => setActive(!active)}
-          >
+          <div className="text-Light-Green " onClick={() => setActive(!active)}>
             {active ? (
-              <div className="text-5xl animate-bounce ">
+              <div className="text-5xl animate-bounce">
                 <IoIosArrowRoundDown />
               </div>
             ) : (

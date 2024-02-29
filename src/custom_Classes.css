@@ -9,3 +9,6 @@ button p {
   margin-block-start: 0;
   margin-block-end: 0;
 }
+.photo-height {
+  height: calc(100% - 121px);
+}
