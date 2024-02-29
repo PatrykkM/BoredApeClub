@@ -7,6 +7,7 @@ import NFTInsights from "./components/NFTInsights";
 import GetNFT from "./components/GetNFT";
 import Faq from "./components/Faq";
 import PreFotter from "./components/PreFooter";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Faq />
         </div>
         <PreFotter />
+        <Footer />
       </div>
     </Provider>
   );

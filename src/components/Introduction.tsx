@@ -6,7 +6,7 @@ const Introduction = () => {
   return (
     <>
       <section className="flex flex-col items-center mt-24 px-5">
-        <div className="flex flex-col text-white text-5xl font-bold text-center ">
+        <div className=" flex flex-col text-white text-5xl sm:text-6xl font-bold text-center ">
           <h1>Start Making</h1>
           <h1>Money With</h1>
           <h1>NFTs</h1>

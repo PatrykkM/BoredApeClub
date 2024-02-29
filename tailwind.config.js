@@ -4,6 +4,10 @@ export default {
   theme: {
     screens: {
       xs: "410px",
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
     },
     extend: {
       fontFamily: {
@@ -29,6 +33,9 @@ export default {
         68: "17rem",
         66: "16.5rem",
         100: "25rem",
+      },
+      width: {
+        17: "4.50rem",
       },
       borderColor: {
         "Lighter-Grey": "#29282D",
