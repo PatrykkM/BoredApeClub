@@ -1,7 +1,29 @@
+import { useState } from "react";
 import mainApe from "../assets/apesIMG/MainApe.png";
 import { FaPlus } from "react-icons/fa6";
+import { FaMinus } from "react-icons/fa";
 
 const Faq = () => {
+  const [activeNumber, setActiveNumber] = useState(0);
+  const FaqOptions = [
+    {
+      Title: "Who we are",
+      desc: "Who we are Who we are Who we are ",
+    },
+    {
+      Title: "How to join to our club",
+      desc: "How to join to our club How to join to our club How to join to our club",
+    },
+    {
+      Title: "Join  NFT Educational Program",
+      desc: "Participate in our NFT Educational Program al Program al Program al Program al Program",
+    },
+    {
+      Title: "Plans for future",
+      desc: "Plans for future Plans for future Plans for future Plans for future Plans for future",
+    },
+  ];
+  console.log(activeNumber);
   return (
     <section className="flex flex-col mt-12">
       <h3 className="text-Darker-White text-3xl uppercase font-medium">Faq</h3>
@@ -18,36 +40,36 @@ const Faq = () => {
         <div className="absolute bg-Img-background w-80 h-66 bottom-0 left-1/2 transform -translate-x-1/2 rounded-lg"></div>
       </div>
       <div className="flex flex-col mt-6 ">
-        <div className="flex justify-between items-center text-Darker-White font-light text-lg border-b border-uninportant-text mb-3">
-          <div className="mb-2">Who we are</div>
-          <div className="text-lg mb-2">
-            <FaPlus />
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-col mt-3 ">
-        <div className="flex justify-between items-center text-Darker-White font-light text-lg border-b border-uninportant-text mb-3">
-          <div className="mb-2">Who we are</div>
-          <div className="text-lg mb-2">
-            <FaPlus />
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-col mt-3 ">
-        <div className="flex justify-between items-center text-Darker-White font-light text-lg border-b border-uninportant-text mb-3">
-          <div className="mb-2">Who we are</div>
-          <div className="text-lg mb-2">
-            <FaPlus />
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-col mt-3 ">
-        <div className="flex justify-between items-center text-Darker-White font-light text-lg border-b border-uninportant-text mb-3">
-          <div className="mb-2">Who we are</div>
-          <div className="text-lg mb-2">
-            <FaPlus />
-          </div>
-        </div>
+        {FaqOptions.map((Faq, id) => (
+          <>
+            <div className=" h-auto flex flex-col   text-Darker-White font-light text-xl border-b border-uninportant-text mb-3">
+              <div className="flex   justify-between items-center w-full">
+                <div className="mb-1">{Faq.Title}</div>
+                <div
+                  className="text-lg mb-1"
+                  onClick={() => setActiveNumber(id + 1)}
+                >
+                  {activeNumber === id + 1 ? <FaMinus /> : <FaPlus />}
+                </div>
+              </div>
+              <div
+                className={`flex items-center   transition-all overflow-hidden mb-2 ${
+                  activeNumber === id + 1 ? `h-10` : ` h-0`
+                }`}
+              >
+                <div
+                  className={` overflow-hidden transition-transform text-uninportant-text text-xs font-light  ${
+                    activeNumber === id + 1
+                      ? `translate-y-0`
+                      : ` -translate-y-full`
+                  }`}
+                >
+                  <div>{Faq.desc}</div>
+                </div>
+              </div>
+            </div>
+          </>
+        ))}
       </div>
     </section>
   );
