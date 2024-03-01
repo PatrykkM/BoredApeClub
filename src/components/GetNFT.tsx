@@ -48,7 +48,6 @@ const GetNFT = () => {
               className={`w-1/2 mt-4 ${(id + 1) % 2 === 0 ? `pl-2` : `pr-2`} ${
                 id > 5 && active ? `hidden` : null
               } `}
-              key={id}
             >
               <div className="transition-all bg-Lighter-Grey  w-full flex flex-col rounded-lg p-2 ">
                 <img
