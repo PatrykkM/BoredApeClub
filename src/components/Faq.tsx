@@ -1,5 +1,5 @@
 import { useState } from "react";
-import mainApe from "../assets/apesIMG/MainApe.png";
+import mainApe from "../assets/apesIMG/FaqApe1-Bgclear.png";
 import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa";
 
@@ -23,7 +23,6 @@ const Faq = () => {
       desc: "Plans for future Plans for future Plans for future Plans for future Plans for future",
     },
   ];
-  console.log(activeNumber);
   return (
     <section className="flex flex-col mt-12 max-w-lg px-5">
       <h3 className="text-Darker-White text-3xl uppercase font-medium">Faq</h3>
@@ -41,7 +40,7 @@ const Faq = () => {
       </div>
       <div className="flex flex-col mt-6 ">
         {FaqOptions.map((Faq, id) => (
-          <>
+          <div key={id}>
             <div className="  flex flex-col   text-Darker-White font-light text-xl border-b border-uninportant-text mb-3">
               <div className="flex   justify-between items-center w-full">
                 <div className="mb-1">{Faq.Title}</div>
@@ -68,7 +67,7 @@ const Faq = () => {
                 </div>
               </div>
             </div>
-          </>
+          </div>
         ))}
       </div>
     </section>

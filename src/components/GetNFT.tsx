@@ -2,7 +2,7 @@ import Ape1 from "../assets/apesIMG/Ape1.png";
 import Ape2 from "../assets/apesIMG/ape2.png";
 import Ape3 from "../assets/apesIMG/ape3.png";
 import Ape4 from "../assets/apesIMG/ape4.png";
-import Ape5 from "../assets/apesIMG/ape5.png";
+import Ape5 from "../assets/apesIMG/RomeMonkey.png";
 import Ape6 from "../assets/apesIMG/ape6.png";
 import Ape7 from "../assets/apesIMG/ape7.png";
 import Ape8 from "../assets/apesIMG/ape8.png";
@@ -48,6 +48,7 @@ const GetNFT = () => {
               className={`w-1/2 mt-4 ${(id + 1) % 2 === 0 ? `pl-2` : `pr-2`} ${
                 id > 5 && active ? `hidden` : null
               } `}
+              key={id}
             >
               <div className="transition-all bg-Lighter-Grey  w-full flex flex-col rounded-lg p-2 ">
                 <img

@@ -1,4 +1,4 @@
-import mainApe from "../assets/apesIMG/MainApe.png";
+import mainApe from "../assets/apesIMG/FaqApe-Bgclear.png";
 
 const PreFotter = () => {
   return (
@@ -16,7 +16,7 @@ const PreFotter = () => {
         <div className="relative w-full rounded-r-full h-44 bg-Light-Green ">
           <img
             src={mainApe}
-            className="w-64 z-10 absolute right-8 -top-20 transform  scale-x-[-1]"
+            className="w-64 z-10 absolute right-11 -top-20 transform  scale-x-[-1]"
           />
         </div>
       </div>
