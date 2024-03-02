@@ -1,15 +1,15 @@
 import Ape1 from "../assets/apesIMG/Ape1.png";
 import Ape2 from "../assets/apesIMG/ape2.png";
 import Ape3 from "../assets/apesIMG/ape3.png";
-import Ape4 from "../assets/apesIMG/ape4.png";
+import Ape4 from "../assets/apesIMG/Ape12.png";
 import Ape5 from "../assets/apesIMG/RomeMonkey.png";
-import Ape6 from "../assets/apesIMG/ape6.png";
+import Ape6 from "../assets/apesIMG/pimpApe.png";
 import Ape7 from "../assets/apesIMG/ape7.png";
 import Ape8 from "../assets/apesIMG/ape8.png";
 import Ape9 from "../assets/apesIMG/ape9.png";
 import Ape10 from "../assets/apesIMG/ape10.png";
 import Ape11 from "../assets/apesIMG/ape11.png";
-import Ape12 from "../assets/apesIMG/Ape12.png";
+import Ape12 from "../assets/apesIMG/ape4.png";
 import { IoIosArrowRoundDown } from "react-icons/io";
 import { FaEthereum } from "react-icons/fa";
 
