@@ -20,11 +20,11 @@ function App() {
           <Introduction />
         </div>
         <WhyUs />
-        <div className=" flex  items-center flex-col  ">
+        <div className=" flex  items-center flex-col  w-full">
           <NFTInsights />
         </div>
         <GetNFT />
-        <div className=" flex  items-center flex-col ">
+        <div className=" flex  items-center flex-col w-full">
           <Faq />
         </div>
         <PreFotter />

@@ -34,7 +34,7 @@ const GetNFT = () => {
 
   return (
     <section className="  flex  justify-center items-center bg-Light-Grey w-full  ">
-      <div className=" relative flex flex-col  items-center justify-center  max-w-lg p-5">
+      <div className=" relative flex flex-col  items-center justify-center  max-w-lg  md:max-w-7xl p-5 md:px-2">
         <h2 className="text-3xl text-Darker-White font-medium mt-4">
           Get Our NFT here
         </h2>
@@ -42,17 +42,17 @@ const GetNFT = () => {
           NFT Signals is the ultimate alpha group for beginner and experienced
           traders to make profit flipping NFTs.
         </p>
-        <div className=" w-full  flex flex-wrap mt-3 mb-12">
+        <div className=" w-full  flex flex-wrap mt-3 mb-12 justify-center ">
           {allNFT.map((NFT, id) => (
             <div
-              className={`w-1/2 mt-4 ${(id + 1) % 2 === 0 ? `pl-2` : `pr-2`} ${
-                id > 5 && active ? `hidden` : null
-              } `}
+              className={`w-1/2 md:w-1/3 mt-4  md:p-4 max-w-76 grow ${
+                (id + 1) % 2 === 0 ? `pl-2` : `pr-2`
+              } ${id > 5 && active ? `hidden` : null} `}
             >
               <div className="transition-all bg-Lighter-Grey  w-full flex flex-col rounded-lg p-2 ">
                 <img
                   src={NFT.Img}
-                  className="object-cover transition-all h-36 xs:h-auto   w-full  rounded-lg"
+                  className="object-cover transition-all h-36 xs:h-auto  md:max-h-64 w-full  rounded-lg "
                 />
                 <div className="flex w-full justify-between items-center text-white  mt-3 text-sm ">
                   <div className="font-light">{NFT.ApeID}</div>

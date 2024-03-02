@@ -24,24 +24,28 @@ const Faq = () => {
     },
   ];
   return (
-    <section className="flex flex-col mt-12 max-w-lg px-5">
-      <h3 className="text-Darker-White text-3xl uppercase font-medium">Faq</h3>
-      <div className="mt-6 text-uninportant-text font-light ">
-        NFT FAQ is the ultimate aplha group for great & Experienced Flipping
-        NFTs
+    <section className="w-full flex flex-col md:items-center md:justify-between md:flex-row mt-12 max-w-lg px-5 md:px-7 md:max-w-7xl">
+      <div className="md:flex-col md:w-1/2 md:max-w-ms md:pr-10">
+        <h3 className="text-Darker-White text-3xl uppercase font-medium">
+          Faq
+        </h3>
+        <div className="mt-6 text-uninportant-text font-light ">
+          NFT FAQ is the ultimate aplha group for great & Experienced Flipping
+          NFTs
+        </div>
+        <div className="flex relative ">
+          <img
+            src={mainApe}
+            alt="Image of BoredApe"
+            className=" object-cover z-10 "
+          />
+          <div className="absolute bg-Img-background w-full h-4/5 bottom-0 left-1/2 transform -translate-x-1/2 rounded-lg"></div>
+        </div>
       </div>
-      <div className="flex relative ">
-        <img
-          src={mainApe}
-          alt="Image of BoredApe"
-          className=" object-cover z-10 "
-        />
-        <div className="absolute bg-Img-background w-full h-4/5 bottom-0 left-1/2 transform -translate-x-1/2 rounded-lg"></div>
-      </div>
-      <div className="flex flex-col mt-6 ">
+      <div className="flex flex-col mt-6 md:justify-center ">
         {FaqOptions.map((Faq, id) => (
           <div key={id}>
-            <div className="  flex flex-col   text-Darker-White font-light text-xl border-b border-uninportant-text mb-3">
+            <div className="  flex flex-col   text-Darker-White font-light text-xl border-b border-uninportant-text mb-3 ">
               <div className="flex   justify-between items-center w-full">
                 <div className="mb-1">{Faq.Title}</div>
                 <div

@@ -13,6 +13,10 @@ export default {
       fontFamily: {
         kanit: ["Kanit"],
       },
+      maxWidth: {
+        76: "19.75rem",
+        108: "27rem",
+      },
       backgroundColor: {
         "main-background": "#111112",
         "Img-background": "#1C1C1E",

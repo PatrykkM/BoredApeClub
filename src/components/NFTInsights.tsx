@@ -3,21 +3,23 @@ import BubblegumApe from "../assets/apesIMG/BubblegumApeInsights.png";
 
 const NFTInsights = () => {
   return (
-    <section className="relative flex flex-col items-center  my-12 max-w-lg px-5  ">
-      <div className="relative w-11/12 border-b-2 border-uninportant-text border-dashed ">
-        <div className=" text-xs absolute text-uninportant-text -top-[5px] -left-2">
-          <BiSolidLeftArrow className="" />
+    <section className="relative flex flex-col items-center  my-12 max-w-lg px-5 md:w-full md:max-w-7xl md:px-7 md:flex-row-reverse md:justify-between ">
+      <div className="flex flex-col w-4/5 md:max-w-lg ">
+        <div className="relative w-11/12   border-b-2 border-uninportant-text border-dashed md:w-full ">
+          <div className=" text-xs absolute text-uninportant-text -top-[5px] -left-2">
+            <BiSolidLeftArrow className="" />
+          </div>
         </div>
+        <h3 className="text-2xl text-white font-medium text-center mt-3 md:text-3xl">
+          Game-Changer For Online Investment Strategy
+        </h3>
+        <p className="text-sm text-uninportant-text font-light text-center mt-3">
+          The signals have been incredibly accurate, providing real-time alerts
+          and insights that have helped me identify profitable NFTs and
+          diversify my portfolio.
+        </p>
       </div>
-      <h3 className="text-2xl text-white font-medium text-center mt-3">
-        Game-Changer For Online Investment Strategy
-      </h3>
-      <p className="text-sm text-uninportant-text font-light text-center mt-3">
-        The signals have been incredibly accurate, providing real-time alerts
-        and insights that have helped me identify profitable NFTs and diversify
-        my portfolio.
-      </p>
-      <div className="flex relative ">
+      <div className="flex relative mr-7">
         <img
           src={BubblegumApe}
           alt="Image of BoredApe"
@@ -25,7 +27,7 @@ const NFTInsights = () => {
         />
         <div className="absolute bg-Img-background w-full h-4/5 bottom-0 left-1/2 transform -translate-x-1/2 rounded-lg"></div>
       </div>
-      <div className="w-full relative flex items-center justify-center mt-9">
+      <div className="w-full relative flex items-center justify-center mt-9 md:hidden">
         <button className=" bg-Light-Green  py-3 px-6 rounded-xl font-medium">
           Join our Club
         </button>

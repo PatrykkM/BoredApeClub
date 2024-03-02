@@ -21,7 +21,7 @@ const Header = () => {
   return (
     <div className="fixed w-full  z-50  ">
       <section className=" flex  grow  items-center justify-center backdrop-blur-lg backdrop-filter ">
-        <div className="md:max-w-7xl px-5 flex grow items-center justify-between backdrop-blur-lg backdrop-filter py-4">
+        <div className="md:max-w-7xl px-5 flex grow items-center justify-between  py-4">
           <div className="hexagon text-xs h-8 w-7 font-semibold md:h-10 md:w-9 md:text-sm md:font-bold">
             NFT
           </div>

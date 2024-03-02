@@ -7,7 +7,7 @@ const Introduction = () => {
   return (
     <>
       <section className="flex flex-col items-center mt-24 px-5 md:px-7">
-        <div className="md:flex md:flex-row-reverse">
+        <div className="md:flex flex-row-reverse">
           <div className=" flex flex-col text-white text-5xl sm:text-6xl font-bold text-center md:text-7xl ">
             <div className="md:hidden">
               <h1>Start Making</h1>
@@ -30,7 +30,7 @@ const Introduction = () => {
           </div>
         </div>
       </section>
-      <section className=" flex flex-col md:flex-row justify-between w-full h-auto md:mt-7 px-5 md:px-7 ">
+      <section className=" flex flex-col md:flex-row justify-between w-full h-auto md:mt-7 px-5  ">
         <div className="flex relative md:w-2/5  ">
           <img
             src={mainApe}
