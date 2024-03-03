@@ -76,7 +76,7 @@ const WhyUs = () => {
       <section className="bg-Light-Grey w-full flex items-center justify-center  ">
         <div className="w-full flex flex-col md:flex-row justify-center items-center max-w-lg md:max-w-7xl  px-5 md:px-7  md:my-6 lg:justify-between">
           <div className="flex flex-col self-start max-w-lg  mt-6">
-            <h3 className="text-3xl font-medium text-white">
+            <h3 className="text-3xl font-medium text-white md:text-5xl md:font-semibold">
               The Ultimate NFT Signals AlphaGrup
             </h3>
             <p className="mt-3 text-uninportant-text font-light">

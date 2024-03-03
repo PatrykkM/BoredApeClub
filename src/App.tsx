@@ -16,7 +16,7 @@ function App() {
         <div className=" flex  items-center flex-col max-w-lg  ">
           <Header />
         </div>
-        <div className=" flex  items-center flex-col max-w-lg md:max-w-7xl">
+        <div className=" w-full flex  items-center flex-col max-w-lg md:max-w-7xl">
           <Introduction />
         </div>
         <WhyUs />

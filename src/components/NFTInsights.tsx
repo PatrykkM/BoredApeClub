@@ -3,21 +3,24 @@ import BubblegumApe from "../assets/apesIMG/BubblegumApeInsights.png";
 
 const NFTInsights = () => {
   return (
-    <section className="relative flex flex-col items-center  my-12 max-w-lg px-5 md:w-full md:max-w-7xl md:px-7 md:flex-row-reverse md:justify-between ">
-      <div className="flex flex-col w-4/5 md:max-w-lg ">
-        <div className="relative w-11/12   border-b-2 border-uninportant-text border-dashed md:w-full ">
+    <section className="relative flex flex-col items-center  my-12 max-w-lg px-5 md:w-full md:max-w-7xl md:px-7 md:flex-row-reverse md:justify-between md:items-end lg:items-center ">
+      <div className="flex flex-col   items-center  md:max-w-lg pl-10 md:items-start">
+        <div className="relative w-2/3   border-b-2 border-uninportant-text border-dashed md:w-full ">
           <div className=" text-xs absolute text-uninportant-text -top-[5px] -left-2">
-            <BiSolidLeftArrow className="" />
+            <BiSolidLeftArrow />
           </div>
         </div>
-        <h3 className="text-2xl text-white font-medium text-center mt-3 md:text-3xl">
+        <h3 className="text-2xl text-white font-medium text-center mt-3 md:text-4xl md:text-start">
           Game-Changer For Online Investment Strategy
         </h3>
-        <p className="text-sm text-uninportant-text font-light text-center mt-3">
+        <p className="text-sm text-uninportant-text font-light text-center mt-3 md:text-start">
           The signals have been incredibly accurate, providing real-time alerts
           and insights that have helped me identify profitable NFTs and
           diversify my portfolio.
         </p>
+        <button className="hidden md:block  bg-Light-Green  py-3 w-36 rounded-lg font-medium mt-6">
+          Join our Club
+        </button>
       </div>
       <div className="flex relative mr-7">
         <img

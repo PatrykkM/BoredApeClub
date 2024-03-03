@@ -26,14 +26,14 @@ const Faq = () => {
   return (
     <section className="w-full flex flex-col md:items-center md:justify-between md:flex-row mt-12 max-w-lg px-5 md:px-7 md:max-w-7xl">
       <div className="md:flex-col md:w-1/2 md:max-w-ms md:pr-10">
-        <h3 className="text-Darker-White text-3xl uppercase font-medium">
+        <h3 className="text-Darker-White text-3xl uppercase font-medium md:text-4xl">
           Faq
         </h3>
-        <div className="mt-6 text-uninportant-text font-light ">
+        <div className="mt-6 text-uninportant-text font-light md:mt-3">
           NFT FAQ is the ultimate aplha group for great & Experienced Flipping
           NFTs
         </div>
-        <div className="flex relative ">
+        <div className="flex relative md:-mt-5 ">
           <img
             src={mainApe}
             alt="Image of BoredApe"
@@ -45,7 +45,7 @@ const Faq = () => {
       <div className="flex flex-col mt-6 md:justify-center ">
         {FaqOptions.map((Faq, id) => (
           <div key={id}>
-            <div className="  flex flex-col   text-Darker-White font-light text-xl border-b border-uninportant-text mb-3 ">
+            <div className="  flex flex-col   text-Darker-White font-light text-xl md:text-2xl border-b border-uninportant-text mb-3 ">
               <div className="flex   justify-between items-center w-full">
                 <div className="mb-1">{Faq.Title}</div>
                 <div

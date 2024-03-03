@@ -17,6 +17,9 @@ export default {
         76: "19.75rem",
         108: "27rem",
       },
+      fontSize: {
+        "8.5xl": ["6rem", { lineHeight: "1" }],
+      },
       backgroundColor: {
         "main-background": "#111112",
         "Img-background": "#1C1C1E",

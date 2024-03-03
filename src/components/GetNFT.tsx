@@ -54,15 +54,15 @@ const GetNFT = () => {
                   src={NFT.Img}
                   className="object-cover transition-all h-36 xs:h-auto  md:max-h-64 w-full  rounded-lg "
                 />
-                <div className="flex w-full justify-between items-center text-white  mt-3 text-sm ">
+                <div className="flex w-full justify-between items-center text-white  mt-3 text-sm md:text-base ">
                   <div className="font-light">{NFT.ApeID}</div>
                   <div>{(NFT.Price / 3500).toFixed(1)}ETH</div>
                 </div>
-                <div className="flex w-full justify-between text-uninportant-text text-xs font-light mt-1">
+                <div className="flex w-full justify-between text-uninportant-text text-xs font-light mt-1 md:text-sm">
                   <div>{NFT.Subtitle}</div>
                   <div>{NFT.Price} $</div>
                 </div>
-                <button className="w-full py-2 border-Light-Green border text-white font-light rounded-lg mt-2">
+                <button className="w-full py-2 border-Light-Green border text-white font-light rounded-lg mt-2 md:mt-4">
                   <p className="mb-px ">Buy Now</p>
                 </button>
               </div>
