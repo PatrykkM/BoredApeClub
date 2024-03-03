@@ -33,6 +33,7 @@ export default {
         "Light-Green": "#8FFF6A",
         "Custom-Grey": "#1C1C1E",
         "Darker-White": "#EEEEEE",
+        "Arrow-Dark-White": "#BFBFBF",
       },
       height: {
         88: "22rem",
@@ -47,6 +48,7 @@ export default {
       },
       borderColor: {
         "Lighter-Grey": "#29282D",
+        "Arrow-Dark-White": "#BFBFBF",
       },
     },
   },

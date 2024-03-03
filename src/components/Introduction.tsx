@@ -12,7 +12,12 @@ const Introduction = () => {
             <div className="leading-">
               <h1>Start Making</h1>
               <h1>Money With</h1>
-              <h1>NFTs</h1>
+              <div className="flex items-center">
+                <h1>NFTs</h1>
+                <div className="hidden md:block ml-10 relative  border border-Arrow-Dark-White w-3/5 right-1 h-0">
+                  <div className="absolute w-3 h-3 bg-Arrow-Dark-White rotate-45 -top-[6px] -right-1"></div>
+                </div>
+              </div>
             </div>
           </div>
           <div className=" md:max-w-72  flex flex-col  ">
