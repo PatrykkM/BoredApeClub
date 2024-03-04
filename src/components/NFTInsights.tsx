@@ -11,12 +11,17 @@ const NFTInsights = () => {
           </div>
         </div>
         <div className=" text-2xl text-white font-medium text-center mt-3 md:text-4xl md:text-start lg:text-6xl">
-          <h2>Game-Changer For</h2>
-          <h2>Online Investment</h2>
-          <div className="hidden md:flex items-center">
-            <h2>Strategy</h2>
-            <div className=" ml-10 relative  border border-Arrow-Dark-White w-3/5 -right-0 mt-3 h-0">
-              <div className="absolute w-3 h-3 bg-Arrow-Dark-White rotate-45 -top-[6px] -right-1"></div>
+          <h2 className="block md:hidden">
+            Game-Changer For Online Investment Strategy
+          </h2>
+          <div className="hidden md:block">
+            <h2>Game-Changer For</h2>
+            <h2>Online Investment</h2>
+            <div className="flex items-center">
+              <h2>Strategy</h2>
+              <div className=" ml-10 relative  border border-Arrow-Dark-White w-3/5 -right-0 mt-3 h-0">
+                <div className="absolute w-3 h-3 bg-Arrow-Dark-White rotate-45 -top-[6px] -right-1"></div>
+              </div>
             </div>
           </div>
         </div>
