@@ -15,10 +15,26 @@ const Header = () => {
       name: "Blog",
     },
     {
-      name: "Work",
+      name: "NFTs",
     },
   ];
-  console.log(Nav.length);
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string | undefined
+  ) => {
+    e.preventDefault();
+    if (!href) return;
+    const id = href;
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.offsetTop - offset;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: "smooth",
+      });
+    }
+  };
   return (
     <div className="fixed w-full  z-50  ">
       <section className=" flex  grow  items-center justify-center backdrop-blur-lg backdrop-filter ">
@@ -35,7 +51,12 @@ const Header = () => {
                   }`}
                   key={li.name}
                 >
-                  {li.name}
+                  <a
+                    onClick={(e) => handleClick(e, li.name)}
+                    className="hover:text-Light-Green transition-all"
+                  >
+                    {li.name}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -43,7 +64,7 @@ const Header = () => {
           <div className="text-white">
             <div className="hidden w-full md:flex justify-center">
               <button className="px-3 py-2 border  border-Light-Green rounded-md flex font-light text-sm">
-                Join Now
+                My NFTs
               </button>
             </div>
             <div className="md:hidden text-3xl">

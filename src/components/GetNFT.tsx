@@ -1,40 +1,30 @@
-import Ape1 from "../assets/apesIMG/Ape1.png";
-import Ape2 from "../assets/apesIMG/ape2.png";
-import Ape3 from "../assets/apesIMG/ape3.png";
-import Ape4 from "../assets/apesIMG/Ape12.png";
-import Ape5 from "../assets/apesIMG/RomeMonkey.png";
-import Ape6 from "../assets/apesIMG/pimpApe.png";
-import Ape7 from "../assets/apesIMG/ape7.png";
-import Ape8 from "../assets/apesIMG/ape8.png";
-import Ape9 from "../assets/apesIMG/ape9.png";
-import Ape10 from "../assets/apesIMG/ape10.png";
-import Ape11 from "../assets/apesIMG/ape11.png";
-import Ape12 from "../assets/apesIMG/ape4.png";
 import { IoIosArrowRoundDown } from "react-icons/io";
 import { FaEthereum } from "react-icons/fa";
 
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { AddNFT } from "../ReduxToolkit/Slices/NFT_Slice";
+import { RootState } from "../ReduxToolkit/store";
+import { singleProduct } from "../ReduxToolkit/Slices/NFT_Slice";
+import { allNFT } from "../NFT_Products/products";
 
 const GetNFT = () => {
+  const dispatch = useDispatch();
+  const MyNFTs = useSelector((state: RootState) => state.HandleNFT.products);
   const [active, setActive] = useState(true);
-  const allNFT = [
-    { Img: Ape1, ApeID: "Ape#1231", Price: 72343, Subtitle: "Angry" },
-    { Img: Ape2, ApeID: "Ape#1232", Price: 52343, Subtitle: "Sad" },
-    { Img: Ape3, ApeID: "Ape#1233", Price: 82343, Subtitle: "Happy" },
-    { Img: Ape4, ApeID: "Ape#1234", Price: 62343, Subtitle: "Excited" },
-    { Img: Ape5, ApeID: "Ape#1235", Price: 42343, Subtitle: "Pensive" },
-    { Img: Ape6, ApeID: "Ape#1236", Price: 92343, Subtitle: "Surprised" },
-    { Img: Ape7, ApeID: "Ape#1237", Price: 22343, Subtitle: "Scared" },
-    { Img: Ape8, ApeID: "Ape#1238", Price: 32343, Subtitle: "In Love" },
-    { Img: Ape9, ApeID: "Ape#1239", Price: 12343, Subtitle: "Curious" },
-    { Img: Ape10, ApeID: "Ape#1240", Price: 72340, Subtitle: "Joyful" },
-    { Img: Ape11, ApeID: "Ape#1241", Price: 52340, Subtitle: "Mysterious" },
-    { Img: Ape12, ApeID: "Ape#1242", Price: 82340, Subtitle: "Rebellious" },
-  ];
+
   const WindowWidth = window.innerWidth;
 
+  const HandleBuyNFT = (e: singleProduct) => {
+    dispatch(AddNFT(e));
+  };
+  console.log(MyNFTs);
+
   return (
-    <section className="  flex  justify-center items-center bg-Light-Grey w-full  ">
+    <section
+      className="  flex  justify-center items-center bg-Light-Grey w-full "
+      id="NFTs"
+    >
       <div className=" relative flex flex-col  items-center justify-center  max-w-lg  md:max-w-7xl p-5 md:px-2">
         <h2 className="text-3xl text-Darker-White font-medium mt-4 md:text-4xl md:font-semibold lg:text-6xl">
           Get Our NFT here
@@ -68,7 +58,10 @@ const GetNFT = () => {
                   <div>{NFT.Subtitle}</div>
                   <div>{NFT.Price} $</div>
                 </div>
-                <button className="w-full py-2 border-Light-Green border text-white font-light rounded-lg mt-2 md:mt-4">
+                <button
+                  className="w-full py-2 border-Light-Green border text-white font-light rounded-lg mt-2 md:mt-4"
+                  onClick={() => HandleBuyNFT(NFT)}
+                >
                   <p className="mb-px ">Buy Now</p>
                 </button>
               </div>

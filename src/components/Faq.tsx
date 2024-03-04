@@ -1,10 +1,15 @@
-import { useState } from "react";
 import mainApe from "../assets/apesIMG/FaqApe1-Bgclear.png";
 import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../ReduxToolkit/store";
+import { ChangeActive } from "../ReduxToolkit/Slices/FAQ_Slice";
 
 const Faq = () => {
-  const [activeNumber, setActiveNumber] = useState(0);
+  const dispatch = useDispatch();
+  const activeNumber = useSelector(
+    (state: RootState) => state.FAQ_Slice.ActiveNumber
+  );
   const FaqOptions = [
     {
       Title: "Who we are",
@@ -24,7 +29,10 @@ const Faq = () => {
     },
   ];
   return (
-    <section className="w-full flex flex-col md:items-center md:justify-between md:flex-row mt-12 max-w-lg px-5 md:px-7 md:max-w-7xl lg:items-start ">
+    <section
+      className="w-full flex flex-col md:items-center md:justify-between md:flex-row mt-12 max-w-lg px-5 md:px-7 md:max-w-7xl lg:items-start "
+      id="Faq"
+    >
       <div className="md:flex-col md:w-1/2 md:max-w-ms md:pr-10">
         <h3 className="text-Darker-White text-3xl uppercase font-medium md:text-4xl">
           Faq
@@ -48,11 +56,12 @@ const Faq = () => {
             <div className="  flex flex-col   text-Darker-White font-light text-xl md:text-2xl border-b border-uninportant-text mb-3 ">
               <div className="flex   justify-between items-center w-full">
                 <div className="mb-1 ">{Faq.Title}</div>
-                <div
-                  className="text-lg mb-1 cursor-pointer"
-                  onClick={() => setActiveNumber(id + 1)}
-                >
-                  {activeNumber === id + 1 ? <FaMinus /> : <FaPlus />}
+                <div className="text-lg mb-1 cursor-pointer">
+                  {activeNumber === id + 1 ? (
+                    <FaMinus onClick={() => dispatch(ChangeActive(0))} />
+                  ) : (
+                    <FaPlus onClick={() => dispatch(ChangeActive(id + 1))} />
+                  )}
                 </div>
               </div>
               <div

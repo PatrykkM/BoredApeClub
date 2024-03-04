@@ -1,15 +1,17 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { NFTproducts } from "../../NFT_Products/products";
 
-interface singleProduct {
-  name: string;
-  category: string;
-  USDprice: number;
-  img: string;
+export interface singleProduct {
+  Img: string;
+  ApeID: string;
+  Price: number;
+  Subtitle: string;
+}
+interface initialStateType {
+  products: singleProduct[];
 }
 
-const initialState = {
-  products: NFTproducts,
+const initialState: initialStateType = {
+  products: [],
 };
 
 export const NFT_Slice = createSlice({

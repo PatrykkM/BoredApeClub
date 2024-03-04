@@ -2,11 +2,38 @@ import mainApe from "../assets/apesIMG/MainApe.png";
 import { FaCheck } from "react-icons/fa";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import arrow from "../assets/IMG/Arrow.jpg";
+import { useDispatch } from "react-redux";
+import { ChangeActive } from "../ReduxToolkit/Slices/FAQ_Slice";
 
 const Introduction = () => {
+  const dispatch = useDispatch();
+
+  const handleClick = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    if (!href) return;
+    const id = href;
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.offsetTop - offset;
+      window.scrollTo({
+        top: elementPosition,
+        behavior: "smooth",
+      });
+      setTimeout(() => {
+        dispatch(ChangeActive(2));
+      }, 1000);
+    }
+  };
   return (
     <>
-      <section className="w-full flex flex-col items-center mt-24 px-5 md:px-7">
+      <section
+        className="w-full flex flex-col items-center mt-24 px-5 md:px-7"
+        id="Home"
+      >
         <div className="w-full md:flex flex-row-reverse justify-end items-center  ">
           <div className="relative flex flex-col text-white text-5xl sm:text-6xl font-bold text-center  md:text-start  md:text-7xl lg:text-8xl xl:text-9xl md:ml-12 xl:mt-4 xl:ml-28">
             <div className="leading-">
@@ -26,7 +53,10 @@ const Introduction = () => {
               Interested in boosting your monthly portfolio by as much as
               700-1000% Enroll in our VIP channel now!
             </p>
-            <button className="hidden md:block  bg-Light-Green  py-3 w-36 rounded-lg font-medium mt-6">
+            <button
+              className="hidden md:block  bg-Light-Green  py-3 w-36 rounded-lg font-medium mt-6"
+              onClick={(e) => handleClick(e, "Faq")}
+            >
               Join our Club
             </button>
           </div>

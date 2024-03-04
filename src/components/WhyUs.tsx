@@ -72,7 +72,10 @@ const WhyUs = () => {
     return OptionComponents.find((e) => e.id === activeOption);
   };
   return (
-    <div className=" w-full md:flex md:justify-center items-center bg-Light-Grey mt-16">
+    <div
+      className=" w-full md:flex md:justify-center items-center bg-Light-Grey mt-16"
+      id="About"
+    >
       <section className="bg-Light-Grey w-full flex items-center justify-center  ">
         <div className="w-full flex flex-col md:flex-row justify-center items-center max-w-lg md:max-w-7xl  px-5 md:px-7  md:my-6 lg:justify-between">
           <div className="flex flex-col self-start max-w-lg  mt-6 lg:max-w-xl">
