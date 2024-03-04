@@ -2,7 +2,7 @@ import mainApe from "../assets/apesIMG/FaqApe-Bgclear.png";
 
 const PreFotter = () => {
   return (
-    <section className="  justify-center flex flex-col  mt-12  md:max-w-7xl md:w-full">
+    <section className="  justify-center flex flex-col  mt-12  md:max-w-7xl md:w-full md:mb-12">
       <div className=" flex md:hidden  items-center  flex-col max-w-lg px-5 md:max-w-7xl">
         <h3 className="text-3xl text-Darker-White ">
           Take Your NFT Investment To the Next Level?
