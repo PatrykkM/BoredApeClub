@@ -4,7 +4,7 @@ import BubblegumApe from "../assets/apesIMG/BubblegumApeInsights.png";
 const NFTInsights = () => {
   return (
     <section className="relative flex flex-col items-center  my-12 max-w-lg px-5 md:w-full md:max-w-7xl md:px-7 md:flex-row-reverse md:justify-between md:items-end lg:items-center ">
-      <div className="flex flex-col   items-center  md:max-w-lg pl-10 md:items-start">
+      <div className="flex flex-col   items-center  md:max-w-lg md:pl-10 md:items-start">
         <div className="relative w-2/3   border-b-2 border-uninportant-text border-dashed md:w-full ">
           <div className=" text-xs absolute text-uninportant-text -top-[5px] -left-2">
             <BiSolidLeftArrow />
@@ -22,7 +22,7 @@ const NFTInsights = () => {
           Join our Club
         </button>
       </div>
-      <div className="flex relative mr-7">
+      <div className="flex relative md:mr-7">
         <img
           src={BubblegumApe}
           alt="Image of BoredApe"

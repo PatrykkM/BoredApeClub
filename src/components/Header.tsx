@@ -18,17 +18,23 @@ const Header = () => {
       name: "Work",
     },
   ];
+  console.log(Nav.length);
   return (
     <div className="fixed w-full  z-50  ">
       <section className=" flex  grow  items-center justify-center backdrop-blur-lg backdrop-filter ">
-        <div className="md:max-w-7xl px-5 flex grow items-center justify-between  py-4">
+        <div className="md:max-w-7xl px-5 flex grow items-center justify-between  py-4 md:px-7">
           <div className="hexagon text-xs h-8 w-7 font-semibold md:h-10 md:w-9 md:text-sm md:font-bold">
             NFT
           </div>
           <div className="flex-grow flex justify-center items-center">
-            <ul className="hidden md:flex text-Darker-White w-96 bg-Lighter-Grey justify-around items-center rounded-full h-12 font-extralight">
-              {Nav.map((li) => (
-                <li className="cursor-pointer" key={li.name}>
+            <ul className="hidden md:flex text-Darker-White  bg-Lighter-Grey justify-around items-center rounded-full h-12 font-extralight">
+              {Nav.map((li, id) => (
+                <li
+                  className={`cursor-pointer  ${
+                    id === Nav.length - 1 ? `px-10` : `pl-10`
+                  }`}
+                  key={li.name}
+                >
                   {li.name}
                 </li>
               ))}
