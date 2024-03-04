@@ -24,7 +24,7 @@ const Faq = () => {
     },
   ];
   return (
-    <section className="w-full flex flex-col md:items-center md:justify-between md:flex-row mt-12 max-w-lg px-5 md:px-7 md:max-w-7xl">
+    <section className="w-full flex flex-col md:items-center md:justify-between md:flex-row mt-12 max-w-lg px-5 md:px-7 md:max-w-7xl lg:items-start ">
       <div className="md:flex-col md:w-1/2 md:max-w-ms md:pr-10">
         <h3 className="text-Darker-White text-3xl uppercase font-medium md:text-4xl">
           Faq
@@ -33,7 +33,7 @@ const Faq = () => {
           NFT FAQ is the ultimate aplha group for great & Experienced Flipping
           NFTs
         </div>
-        <div className="flex relative md:-mt-5 ">
+        <div className="md:w-full md:max-w-sm flex relative md:-mt-5 ">
           <img
             src={mainApe}
             alt="Image of BoredApe"
@@ -42,21 +42,21 @@ const Faq = () => {
           <div className="absolute bg-Img-background w-full h-4/5 bottom-0 left-1/2 transform -translate-x-1/2 rounded-lg"></div>
         </div>
       </div>
-      <div className="flex flex-col mt-6 md:justify-center ">
+      <div className="flex flex-col mt-6 md:mt-0 grow lg:mt-12 ">
         {FaqOptions.map((Faq, id) => (
           <div key={id}>
             <div className="  flex flex-col   text-Darker-White font-light text-xl md:text-2xl border-b border-uninportant-text mb-3 ">
               <div className="flex   justify-between items-center w-full">
-                <div className="mb-1">{Faq.Title}</div>
+                <div className="mb-1 ">{Faq.Title}</div>
                 <div
-                  className="text-lg mb-1"
+                  className="text-lg mb-1 cursor-pointer"
                   onClick={() => setActiveNumber(id + 1)}
                 >
                   {activeNumber === id + 1 ? <FaMinus /> : <FaPlus />}
                 </div>
               </div>
               <div
-                className={`flex items-center   transition-all duration-75 overflow-hidden mb-2 ${
+                className={`flex items-center   transition-all duration-75 overflow-hidden mb-2   ${
                   activeNumber === id + 1 ? `h-10` : ` h-0`
                 }`}
               >

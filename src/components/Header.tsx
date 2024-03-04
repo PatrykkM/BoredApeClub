@@ -27,7 +27,7 @@ const Header = () => {
             NFT
           </div>
           <div className="flex-grow flex justify-center items-center">
-            <ul className="hidden md:flex text-Darker-White  bg-Lighter-Grey justify-around items-center rounded-full h-12 font-extralight">
+            <ul className="hidden md:flex text-Darker-White  bg-Lighter-Grey justify-around items-center rounded-full h-12  font-extralight">
               {Nav.map((li, id) => (
                 <li
                   className={`cursor-pointer  ${
