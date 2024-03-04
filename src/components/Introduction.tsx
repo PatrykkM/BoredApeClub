@@ -20,8 +20,8 @@ const Introduction = () => {
               </div>
             </div>
           </div>
-          <div className=" md:max-w-72  flex flex-col  ">
-            <img src={arrow} className="hidden md:block" />
+          <div className="md:w-1/3 max-w-80 flex flex-col  ">
+            <img src={arrow} className=" w-full hidden md:block" />
             <p className="text-center text-uninportant-text mt-7 md:mt-3 md:text-left">
               Interested in boosting your monthly portfolio by as much as
               700-1000% Enroll in our VIP channel now!
