@@ -1,6 +1,14 @@
 import mainApe from "../assets/apesIMG/FaqApe-Bgclear.png";
+import { scrollToElement } from "../CustomFunctions/CustomScrollToElement";
 
 const PreFotter = () => {
+  const handleClick = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    scrollToElement(e, href);
+  };
   return (
     <section className="  justify-center flex flex-col  mt-12  md:max-w-7xl md:w-full md:mb-12">
       <div className=" flex md:hidden  items-center  flex-col max-w-lg px-5 md:max-w-7xl">
@@ -8,8 +16,8 @@ const PreFotter = () => {
           Take Your NFT Investment To the Next Level?
         </h3>
         <p className="text-uninportant-text mt-6 font-light">
-          Take your NFT ultimate alpha group for beginner and experienced
-          flipping NFTs.
+          Are you convinced? Dive into NFT Bored Ape Club, join us, and start
+          earning in the vibrant and lucrative world of NFT trading.
         </p>
       </div>
       <div className=" mt-20 mr-5 w-full">
@@ -23,18 +31,25 @@ const PreFotter = () => {
               Take Your NFT Investment To the Next Level?
             </h3>
             <p className="text-gray-950 mt-3 ">
-              Take your NFT ultimate alpha group for beginner and experienced
-              flipping NFTs.
+              Are you convinced? Dive into NFT Bored Ape Club, join us, and
+              start earning in the vibrant and lucrative world of NFT trading.
             </p>
-            <button className="px-8 py-3 border-2 border-Custom-Grey  text-Custom-Grey rounded-md flex   mt-6 font-bold">
-              Join Chat
+
+            <button
+              className="px-8 py-3 border-2 border-Custom-Grey  text-Custom-Grey rounded-md flex   mt-6 font-bold"
+              onClick={(e) => handleClick(e, "NFTs")}
+            >
+              Buy Now
             </button>
           </div>
         </div>
       </div>
       <div className="  flex  md:hidden justify-center">
-        <button className="px-8 py-2 border border-Light-Green  text-Light-Green rounded-md flex  mt-9 font-medium">
-          Join Chat
+        <button
+          className="px-8 py-2 border border-Light-Green  text-Light-Green rounded-md flex  mt-9 font-medium"
+          onClick={(e) => handleClick(e, "NFTs")}
+        >
+          Buy Now
         </button>
       </div>
     </section>

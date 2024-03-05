@@ -21,7 +21,10 @@ export const NFT_Slice = createSlice({
     AddNFT: (state, action: PayloadAction<singleProduct>) => {
       state.products.push(action.payload);
     },
+    RemoveNFT: (state, action: PayloadAction<singleProduct>) => {
+      state.products.find((product) => product.ApeID !== action.payload.ApeID);
+    },
   },
 });
 
-export const { AddNFT } = NFT_Slice.actions;
+export const { AddNFT, RemoveNFT } = NFT_Slice.actions;

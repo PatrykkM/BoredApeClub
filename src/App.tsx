@@ -1,35 +1,24 @@
-import Header from "./components/Header";
-import Introduction from "./components/Introduction";
-import WhyUs from "./components/WhyUs";
 import { Provider } from "react-redux";
 import { store } from "./ReduxToolkit/store";
-import NFTInsights from "./components/NFTInsights";
-import GetNFT from "./components/GetNFT";
-import Faq from "./components/Faq";
-import PreFotter from "./components/PreFooter";
-import Footer from "./components/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MainPage from "./components/MainPage";
+import MyNFTsPage from "./components/MyNFTsPage";
+import Header from "./components/Header";
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
   return (
     <Provider store={store}>
-      <div className="flex flex-col items-center  justify-center    font-kanit bg-main-background min-w-80 overflow-hidden box-border ">
-        <div className=" flex  items-center flex-col max-w-lg  ">
+      <BrowserRouter>
+        <div className="flex flex-col items-center   font-kanit bg-main-background  overflow-hidden box-border">
           <Header />
+          <Routes>
+            <Route path="/BoredApeClub/" element={<MainPage />} />
+            <Route path="/BoredApeClub/MyNFTs" element={<MyNFTsPage />} />
+            <Route path="/*" element={<ErrorPage />} />
+          </Routes>
         </div>
-        <div className=" w-full flex  items-center flex-col max-w-lg md:max-w-7xl">
-          <Introduction />
-        </div>
-        <WhyUs />
-        <div className=" flex  items-center flex-col  w-full">
-          <NFTInsights />
-        </div>
-        <GetNFT />
-        <div className=" flex  items-center flex-col w-full">
-          <Faq />
-        </div>
-        <PreFotter />
-        <Footer />
-      </div>
+      </BrowserRouter>
     </Provider>
   );
 }

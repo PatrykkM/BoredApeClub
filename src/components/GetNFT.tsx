@@ -7,6 +7,7 @@ import { AddNFT } from "../ReduxToolkit/Slices/NFT_Slice";
 import { RootState } from "../ReduxToolkit/store";
 import { singleProduct } from "../ReduxToolkit/Slices/NFT_Slice";
 import { allNFT } from "../NFT_Products/products";
+import { ItemBought } from "../ReduxToolkit/Slices/CurrentBalance_Slice";
 
 const GetNFT = () => {
   const dispatch = useDispatch();
@@ -15,7 +16,8 @@ const GetNFT = () => {
 
   const WindowWidth = window.innerWidth;
 
-  const HandleBuyNFT = (e: singleProduct) => {
+  const HandleBuyNFT = (e: singleProduct, price: number) => {
+    dispatch(ItemBought(price));
     dispatch(AddNFT(e));
   };
   console.log(MyNFTs);
@@ -36,7 +38,7 @@ const GetNFT = () => {
         <div className=" w-full  flex flex-wrap mt-3 mb-12 justify-center ">
           {allNFT.map((NFT, id) => (
             <div
-              className={`w-1/2 md:w-1/3 mt-4  md:p-4 max-w-76 grow ${
+              className={`w-1/2 md:w-1/3 mt-4  md:p-4 max-w-76  ${
                 (id + 1) % 2 === 0 ? `pl-2` : `pr-2`
               } ${
                 (id > 5 && active && WindowWidth <= 1024) ||
@@ -60,7 +62,7 @@ const GetNFT = () => {
                 </div>
                 <button
                   className="w-full py-2 border-Light-Green border text-white font-light rounded-lg mt-2 md:mt-4"
-                  onClick={() => HandleBuyNFT(NFT)}
+                  onClick={() => HandleBuyNFT(NFT, NFT.Price)}
                 >
                   <p className="mb-px ">Buy Now</p>
                 </button>

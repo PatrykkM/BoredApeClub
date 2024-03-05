@@ -12,9 +12,11 @@ const WhyUs = () => {
     {
       id: 1,
       desc: (
-        <div>
-          Boost your portfolio with our NFTs, promising an annual ROI of 41%
-        </div>
+        <p>
+          Elevate your portfolio with our unique NFTs, offering an impressive
+          annual ROI of 41%. Dive into the digital asset market with our
+          selection, blending the exclusivity of blockchain technology.
+        </p>
       ),
       img: (
         <div className="grow flex items-center md:justify-end md:ml-5">
@@ -27,7 +29,13 @@ const WhyUs = () => {
     },
     {
       id: 2,
-      desc: <div>Our NFTs grant access to members only events.</div>,
+      desc: (
+        <p>
+          Access to exclusive events is yours with our NFTs, connecting you with
+          leaders and innovators in the digital realm. Enjoy unique gatherings
+          that enrich your network and investment, all powered by blockchain.
+        </p>
+      ),
       img: (
         <div className="grow flex items-center md:justify-end md:ml-5">
           <img
@@ -40,7 +48,11 @@ const WhyUs = () => {
     {
       id: 3,
       desc: (
-        <div>Our NFTs are your gateway to networking with millionaires</div>
+        <div>
+          Our NFTs are your gateway to networking with millionaires, bridging
+          elite connections and fostering growth in a vibrant,
+          blockchain-empowered community of innovators
+        </div>
       ),
       img: (
         <div className="grow flex items-center md:justify-end md:ml-5">
@@ -55,7 +67,9 @@ const WhyUs = () => {
       id: 4,
       desc: (
         <div>
-          Protect your assets with our NFTs, designed for unmatched security.
+          Protect your assets with our NFTs, designed for unmatched security.,
+          ensuring each digital asset is backed by the strongest encryption and
+          blockchain integrity. Invest with confidence
         </div>
       ),
       img: (
@@ -78,13 +92,13 @@ const WhyUs = () => {
     >
       <section className="bg-Light-Grey w-full flex items-center justify-center  ">
         <div className="w-full flex flex-col md:flex-row justify-center items-center max-w-lg md:max-w-7xl  px-5 md:px-7  md:my-6 lg:justify-between">
-          <div className="flex flex-col self-start max-w-lg  mt-6 lg:max-w-xl">
+          <div className="flex flex-col self-start md:max-w-sm  mt-6 lg:max-w-xl">
             <h3 className="text-3xl font-medium text-white md:text-5xl md:font-semibold lg:text-6xl ">
-              The Ultimate NFT Signals AlphaGrup
+              Bored Ape Club Elite Digital Collectibles
             </h3>
             <p className="mt-3 text-uninportant-text font-light lg:mt-6">
-              NFT Signals is the ultimate alpha group for beginner and
-              experienced traders to make profit flipping NFTs.
+              The Premier Destination for Beginners and Veterans Alike to Profit
+              from Buying and Flipping NFTs.
             </p>
             <div className="flex justify-around w-full mt-6 border-neutral-800 border-b-2 mb-6 lg:mt-12">
               {options.map((option) => (
