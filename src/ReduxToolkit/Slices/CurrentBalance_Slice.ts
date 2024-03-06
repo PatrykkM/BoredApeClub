@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState = {
-  Balance: 350000,
+  Balance: 150000,
 };
 
 export const CurrentBalance_Slice = createSlice({

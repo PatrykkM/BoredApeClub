@@ -1,22 +1,55 @@
 import { IoIosArrowRoundDown } from "react-icons/io";
 import { FaEthereum } from "react-icons/fa";
-
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { AddNFT } from "../ReduxToolkit/Slices/NFT_Slice";
-import { singleProduct } from "../ReduxToolkit/Slices/NFT_Slice";
-import { allNFT } from "../NFT_Products/products";
+import { useDispatch, useSelector } from "react-redux";
+import { AddNFT } from "../ReduxToolkit/Slices/My_NFT_Slice";
+import { singleProduct } from "../ReduxToolkit/Slices/My_NFT_Slice";
 import { ItemBought } from "../ReduxToolkit/Slices/CurrentBalance_Slice";
+import { RootState } from "../ReduxToolkit/store";
+import { DataProccesing } from "../ReduxToolkit/Slices/All_NFTs_Slice";
+import { ErrorBuyingNFT } from "../ReduxToolkit/Slices/My_NFT_Slice";
 
 const GetNFT = () => {
   const dispatch = useDispatch();
-  const [active, setActive] = useState(true);
+  const allNFT = useSelector((state: RootState) => state.All_NFTS.products);
+  const MyNFT = useSelector((state: RootState) => state.HandleNFT.products);
 
   const WindowWidth = window.innerWidth;
 
-  const HandleBuyNFT = (e: singleProduct, price: number) => {
-    dispatch(ItemBought(price));
-    dispatch(AddNFT(e));
+  const [active, setActive] = useState(true);
+
+  const CurrentBalance = useSelector(
+    (state: RootState) => state.CurrentBalance_Slice.Balance
+  );
+  const IsOwned = (e: string) => {
+    const AllNFTsItems = (e: string) => {
+      const item = allNFT.find((item) => item.ApeID === e);
+      return item?.ApeID;
+    };
+    const MyNFTsItem = (e: string) => {
+      const item = MyNFT.find((item) => item.ApeID === e);
+      return item?.ApeID;
+    };
+    if (AllNFTsItems(e) !== MyNFTsItem(e)) {
+      return true;
+    } else return false;
+  };
+
+  const HandleBuyNFT = (e: singleProduct, price: number, ApeID: string) => {
+    dispatch(DataProccesing(ApeID));
+    setTimeout(() => {
+      if (CurrentBalance >= price && IsOwned(ApeID)) {
+        dispatch(ItemBought(price));
+        dispatch(AddNFT(e));
+        dispatch(DataProccesing(ApeID));
+      } else {
+        dispatch(ErrorBuyingNFT(true));
+        setTimeout(() => {
+          dispatch(ErrorBuyingNFT(false));
+        }, 2000);
+        dispatch(DataProccesing(ApeID));
+      }
+    }, 2000);
   };
 
   return (
@@ -58,10 +91,21 @@ const GetNFT = () => {
                   <div>{NFT.Price} $</div>
                 </div>
                 <button
-                  className="w-full py-2 border-Light-Green border text-white font-light rounded-lg mt-2 md:mt-4"
-                  onClick={() => HandleBuyNFT(NFT, NFT.Price)}
+                  className="w-full py-2 border-Light-Green border text-white font-light rounded-lg mt-2 md:mt-4 transition-all"
+                  onClick={() => HandleBuyNFT(NFT, NFT.Price, NFT.ApeID)}
                 >
-                  <p className="mb-px ">Buy Now</p>
+                  {IsOwned(NFT.ApeID) ? (
+                    NFT.Processing ? (
+                      <div className="flex items-center justify-center">
+                        <p className="mb-px">Buying</p>
+                        <div className="ml-2 border-2 border-t-2 border-Light-Green h-4 w-4 rounded-full animate-spin border-t-transparent"></div>
+                      </div>
+                    ) : (
+                      <p className="mb-px">Buy Now</p>
+                    )
+                  ) : (
+                    <p className="font-medium">Owned</p>
+                  )}
                 </button>
               </div>
             </div>

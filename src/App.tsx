@@ -5,6 +5,7 @@ import MainPage from "./components/MainPage";
 import MyNFTsPage from "./components/MyNFTsPage";
 import Header from "./components/Header";
 import ErrorPage from "./components/ErrorPage";
+import ErrorBuyingNFT from "./components/ErrorBuyingNFT";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/BoredApeClub/MyNFTs" element={<MyNFTsPage />} />
             <Route path="/*" element={<ErrorPage />} />
           </Routes>
+          <ErrorBuyingNFT />
         </div>
       </BrowserRouter>
     </Provider>

@@ -3,14 +3,20 @@ import { FaCheck } from "react-icons/fa";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import arrow from "../assets/IMG/Arrow.jpg";
 import { scrollToElement } from "../CustomFunctions/CustomScrollToElement";
+import { useDispatch } from "react-redux";
+import { ChangeActive } from "../ReduxToolkit/Slices/FAQ_Slice";
 
 const Introduction = () => {
+  const dispatch = useDispatch();
   const handleClick = (
     e: React.MouseEvent<HTMLButtonElement>,
     href: string
   ) => {
     e.preventDefault();
     scrollToElement(e, href);
+    setTimeout(() => {
+      dispatch(ChangeActive(2));
+    }, 1000);
   };
   return (
     <>
