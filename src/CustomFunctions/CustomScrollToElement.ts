@@ -1,5 +1,5 @@
 export const scrollToElement = (
-  e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>,
+  e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement | any> | any,
   href: string
 ) => {
   e.preventDefault();

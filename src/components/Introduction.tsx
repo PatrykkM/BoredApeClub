@@ -32,9 +32,9 @@ const Introduction = () => {
                 </div>
               </div>
             </div>
-            <div className="md:w-1/3 max-w-80 flex flex-col  ">
+            <div className="md:w-1/3 md:max-w-80 flex flex-col items-center md:items-start  ">
               <img src={arrow} className=" w-full hidden md:block" />
-              <p className="text-center text-uninportant-text mt-7 md:mt-3 md:text-left">
+              <p className="max-w-80 text-center text-uninportant-text mt-7 md:mt-3 md:text-left">
                 Interested in boosting your monthly portfolio by as much as
                 700-1000% Buy our NFTs right now!
               </p>

@@ -2,16 +2,14 @@ import { IoIosArrowRoundDown } from "react-icons/io";
 import { FaEthereum } from "react-icons/fa";
 
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { AddNFT } from "../ReduxToolkit/Slices/NFT_Slice";
-import { RootState } from "../ReduxToolkit/store";
 import { singleProduct } from "../ReduxToolkit/Slices/NFT_Slice";
 import { allNFT } from "../NFT_Products/products";
 import { ItemBought } from "../ReduxToolkit/Slices/CurrentBalance_Slice";
 
 const GetNFT = () => {
   const dispatch = useDispatch();
-  const MyNFTs = useSelector((state: RootState) => state.HandleNFT.products);
   const [active, setActive] = useState(true);
 
   const WindowWidth = window.innerWidth;
@@ -20,7 +18,6 @@ const GetNFT = () => {
     dispatch(ItemBought(price));
     dispatch(AddNFT(e));
   };
-  console.log(MyNFTs);
 
   return (
     <section

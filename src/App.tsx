@@ -10,7 +10,7 @@ function App() {
   return (
     <Provider store={store}>
       <BrowserRouter>
-        <div className="flex flex-col items-center   font-kanit bg-main-background  overflow-hidden box-border">
+        <div className="flex flex-col items-center   justify-center font-kanit bg-main-background  overflow-hidden box-border">
           <Header />
           <Routes>
             <Route path="/BoredApeClub/" element={<MainPage />} />
