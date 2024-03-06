@@ -76,7 +76,7 @@ const Header = () => {
             </div>
             {active ? (
               <div className="fixed right-5 top-20 flex flex-col items-center text-white md:hidden w-36  bg-Light-Grey rounded-md  shadow-2xl">
-                <div className="  md:flex justify-center items-center mt-2">
+                <div className="flex py-2">
                   <Link to={"BoredApeClub/MyNFTs"}>
                     <button className="text-Light-Green" onClick={handleActive}>
                       {location.pathname === "/BoredApeClub/MyNFTs" ? (
@@ -87,6 +87,15 @@ const Header = () => {
                     </button>
                   </Link>
                 </div>
+                {location.pathname === "/BoredApeClub/MyNFTs" ? null : (
+                  <div className=" p-2">
+                    <button className="text-indigo-400 " onClick={handleActive}>
+                      {location.pathname === "/BoredApeClub/MyNFTs" ? null : (
+                        <p>{CurrentBalance}$</p>
+                      )}
+                    </button>
+                  </div>
+                )}
                 {Nav.map((li) => (
                   <li key={li.name} className="list-none py-2">
                     <a

@@ -4,10 +4,10 @@ const MyNFTsPage = () => {
   const MyNFTs = useSelector((state: RootState) => state.HandleNFT.products);
   return (
     <section
-      className="w-full  flex  justify-center items-center bg-Light-Grey   min-h-screen mt-[72px]"
+      className="w-full  flex  justify-center  bg-Light-Grey   min-h-screen mt-[64px] md:mt-[72px]"
       id="NFTs"
     >
-      <div className="w-full relative flex flex-col  items-center justify-center  max-w-lg  md:max-w-7xl p-5 md:px-2">
+      <div className="w-full relative flex flex-col  items-center   max-w-lg  md:max-w-7xl p-5 md:px-2">
         {MyNFTs.length <= 0 ? (
           <>
             <h2 className="text-3xl text-Darker-White font-medium mt-4 md:text-4xl md:font-semibold lg:text-6xl">
