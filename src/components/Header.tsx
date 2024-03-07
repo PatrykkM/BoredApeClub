@@ -20,7 +20,21 @@ const Header = () => {
       name: "Faq",
     },
     {
-      name: "Blog",
+      name: "Dive",
+    },
+    {
+      name: "NFTs",
+    },
+  ];
+  const MobileNav = [
+    {
+      name: "Home",
+    },
+    {
+      name: "About",
+    },
+    {
+      name: "Faq",
     },
     {
       name: "NFTs",
@@ -51,9 +65,12 @@ const Header = () => {
       <div className="fixed w-full  z-50  ">
         <section className=" flex  grow  items-center justify-center backdrop-blur-lg backdrop-filter ">
           <div className="relative md:max-w-7xl px-5 flex grow items-center justify-between  py-4 md:px-7">
-            <div className="hexagon text-xs h-8 w-7 font-semibold md:h-10 md:w-9 md:text-sm md:font-bold">
-              NFT
-            </div>
+            <Link to={"/BoredApeClub/"}>
+              <div className="hexagon text-xs h-8 w-7 font-semibold md:h-10 md:w-9 md:text-sm md:font-bold">
+                NFT
+              </div>
+            </Link>
+
             <div className=" hidden md:flex  absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
               <ul className="flex text-Darker-White  bg-Lighter-Grey justify-around items-center rounded-full h-12  font-extralight">
                 {Nav.map((li, id) => (
@@ -96,7 +113,7 @@ const Header = () => {
                     </button>
                   </div>
                 )}
-                {Nav.map((li) => (
+                {MobileNav.map((li) => (
                   <li key={li.name} className="list-none py-2">
                     <a
                       onClick={(e) => handleClick(e, li.name)}

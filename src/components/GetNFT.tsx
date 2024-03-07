@@ -110,20 +110,20 @@ const GetNFT = () => {
 
                 {IsOwned(NFT.ApeID) ? (
                   NFT.Processing ? (
-                    <div className="flex items-center justify-center w-full py-2 border-Light-Green border text-white font-light rounded-lg mt-2 md:mt-4 transition-all">
+                    <div className="flex items-center justify-center w-full h-11 border-Light-Green border text-white font-light rounded-lg mt-2 md:mt-4 transition-all">
                       <p className="mb-px">Buying</p>
                       <div className="ml-2 border-2 border-t-2 border-Light-Green h-4 w-4 rounded-full animate-spin border-t-transparent"></div>
                     </div>
                   ) : (
                     <button
-                      className="w-full py-2 border-Light-Green border text-white font-light rounded-lg mt-2 md:mt-4 transition-all"
+                      className="w-full h-11 border-Light-Green border text-white font-light rounded-lg mt-2 md:mt-4 transition-all"
                       onClick={() => HandleBuyNFT(NFT, NFT.Price, NFT.ApeID)}
                     >
                       <p className="mb-px">Buy Now</p>
                     </button>
                   )
                 ) : (
-                  <div className="flex items-center justify-center w-full py-2 border-Light-Green border text-white font-light rounded-lg mt-2 md:mt-4 transition-all">
+                  <div className="flex items-center justify-center w-full h-11 border-Light-Green border text-white font-light rounded-lg mt-2 md:mt-4 transition-all">
                     <p className="font-medium">Owned</p>
                   </div>
                 )}

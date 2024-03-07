@@ -1,7 +1,35 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../ReduxToolkit/store";
+import { DataProccesing } from "../ReduxToolkit/Slices/My_NFT_Slice";
+import { RemoveNFT, singleProduct } from "../ReduxToolkit/Slices/My_NFT_Slice";
+import { ItemSold } from "../ReduxToolkit/Slices/CurrentBalance_Slice";
+import { useEffect } from "react";
+
 const MyNFTsPage = () => {
+  const dispatch = useDispatch();
   const MyNFTs = useSelector((state: RootState) => state.HandleNFT.products);
+  const IsProcessingNFT = () => {
+    let proccessingNFT = MyNFTs.find(
+      (processing) => processing.Processing === true
+    );
+    if (proccessingNFT === undefined) {
+      return false;
+    } else return true;
+  };
+  const HandleSellNFT = (e: singleProduct, price: number, ApeID: string) => {
+    if (IsProcessingNFT() === false) {
+      dispatch(DataProccesing(ApeID));
+      setTimeout(() => {
+        dispatch(ItemSold(price));
+        dispatch(RemoveNFT(e));
+        dispatch(DataProccesing(ApeID));
+        console.log(e);
+      }, 2000);
+    }
+  };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <section
       className="w-full  flex  justify-center  bg-Light-Grey   min-h-screen mt-[64px] md:mt-[72px]"
@@ -48,12 +76,19 @@ const MyNFTsPage = () => {
                   <div>{NFT.Subtitle}</div>
                   <div>{NFT.Price} $</div>
                 </div>
-                <button
-                  className="w-full py-2 border-Light-Green border text-white font-light rounded-lg mt-2 md:mt-4"
-                  onClick={() => 2}
-                >
-                  <p className="mb-px ">Sell now</p>
-                </button>
+                {NFT.Processing ? (
+                  <div className="w-full flex items-center justify-center h-11 border-Light-Green border text-white font-light rounded-lg mt-2 md:mt-4">
+                    <p className="mb-px ">Selling</p>
+                    <div className="ml-2 border-2 border-t-2 border-Light-Green h-4 w-4 rounded-full animate-spin border-t-transparent"></div>
+                  </div>
+                ) : (
+                  <button
+                    className="w-full h-11 border-Light-Green border text-white font-light rounded-lg mt-2 md:mt-4"
+                    onClick={() => HandleSellNFT(NFT, NFT.Price, NFT.ApeID)}
+                  >
+                    <p className="mb-px ">Sell now</p>
+                  </button>
+                )}
               </div>
             </div>
           ))}

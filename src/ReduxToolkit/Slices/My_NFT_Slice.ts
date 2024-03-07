@@ -32,7 +32,9 @@ export const My_NFT_Slice = createSlice({
       state.products.push(action.payload);
     },
     RemoveNFT: (state, action: PayloadAction<singleProduct>) => {
-      state.products.find((product) => product.ApeID !== action.payload.ApeID);
+      state.products = state.products.filter(
+        (product) => product.ApeID !== action.payload.ApeID
+      );
     },
     ErrorBuyingNFT: (state, action: PayloadAction<boolean>) => {
       state.error.NoMoney = action.payload;
@@ -40,8 +42,21 @@ export const My_NFT_Slice = createSlice({
     ErrorSpamingNFT: (state, action: PayloadAction<boolean>) => {
       state.error.Spamming = action.payload;
     },
+    DataProccesing: (state, action: PayloadAction<string>) => {
+      const index = state.products.findIndex(
+        (product) => product.ApeID === action.payload
+      );
+      if (index !== -1) {
+        state.products[index].Processing = !state.products[index].Processing;
+      }
+    },
   },
 });
 
-export const { AddNFT, RemoveNFT, ErrorBuyingNFT, ErrorSpamingNFT } =
-  My_NFT_Slice.actions;
+export const {
+  AddNFT,
+  RemoveNFT,
+  ErrorBuyingNFT,
+  ErrorSpamingNFT,
+  DataProccesing,
+} = My_NFT_Slice.actions;
