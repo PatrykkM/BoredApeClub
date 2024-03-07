@@ -7,7 +7,6 @@ export interface singleProduct {
   Price: number;
   Subtitle: string;
   Processing: boolean;
-  Owned: boolean;
 }
 interface initialStateType {
   products: singleProduct[];

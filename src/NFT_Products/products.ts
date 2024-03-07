@@ -18,7 +18,6 @@ export const allNFT = [
     Price: 72343,
     Subtitle: "Angry",
     Processing: false,
-    Owned: false,
   },
   {
     Img: Ape2,
@@ -26,7 +25,6 @@ export const allNFT = [
     Price: 52343,
     Subtitle: "Sad",
     Processing: false,
-    Owned: false,
   },
   {
     Img: Ape3,
@@ -34,7 +32,6 @@ export const allNFT = [
     Price: 82343,
     Subtitle: "Happy",
     Processing: false,
-    Owned: false,
   },
   {
     Img: Ape4,
@@ -42,7 +39,6 @@ export const allNFT = [
     Price: 62343,
     Subtitle: "Excited",
     Processing: false,
-    Owned: false,
   },
   {
     Img: Ape5,
@@ -50,7 +46,6 @@ export const allNFT = [
     Price: 42343,
     Subtitle: "Pensive",
     Processing: false,
-    Owned: false,
   },
   {
     Img: Ape6,
@@ -58,7 +53,6 @@ export const allNFT = [
     Price: 92343,
     Subtitle: "Surprised",
     Processing: false,
-    Owned: false,
   },
   {
     Img: Ape7,
@@ -66,7 +60,6 @@ export const allNFT = [
     Price: 22343,
     Subtitle: "Scared",
     Processing: false,
-    Owned: false,
   },
   {
     Img: Ape8,
@@ -74,7 +67,6 @@ export const allNFT = [
     Price: 32343,
     Subtitle: "In Love",
     Processing: false,
-    Owned: false,
   },
   {
     Img: Ape9,
@@ -82,7 +74,6 @@ export const allNFT = [
     Price: 12343,
     Subtitle: "Curious",
     Processing: false,
-    Owned: false,
   },
   {
     Img: Ape10,
@@ -90,7 +81,6 @@ export const allNFT = [
     Price: 72340,
     Subtitle: "Joyful",
     Processing: false,
-    Owned: false,
   },
   {
     Img: Ape11,
@@ -98,7 +88,6 @@ export const allNFT = [
     Price: 52340,
     Subtitle: "Mysterious",
     Processing: false,
-    Owned: false,
   },
   {
     Img: Ape12,
@@ -106,6 +95,5 @@ export const allNFT = [
     Price: 82340,
     Subtitle: "Rebellious",
     Processing: false,
-    Owned: false,
   },
 ];

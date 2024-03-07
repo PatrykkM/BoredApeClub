@@ -6,16 +6,22 @@ export interface singleProduct {
   Price: number;
   Subtitle: string;
   Processing: boolean;
-  Owned: boolean;
+}
+export interface Errors {
+  NoMoney: boolean;
+  Spamming: boolean;
 }
 interface initialStateType {
   products: singleProduct[];
-  error: boolean;
+  error: Errors;
 }
 
 const initialState: initialStateType = {
   products: [],
-  error: false,
+  error: {
+    NoMoney: false,
+    Spamming: false,
+  },
 };
 
 export const My_NFT_Slice = createSlice({
@@ -29,9 +35,13 @@ export const My_NFT_Slice = createSlice({
       state.products.find((product) => product.ApeID !== action.payload.ApeID);
     },
     ErrorBuyingNFT: (state, action: PayloadAction<boolean>) => {
-      state.error = action.payload;
+      state.error.NoMoney = action.payload;
+    },
+    ErrorSpamingNFT: (state, action: PayloadAction<boolean>) => {
+      state.error.Spamming = action.payload;
     },
   },
 });
 
-export const { AddNFT, RemoveNFT, ErrorBuyingNFT } = My_NFT_Slice.actions;
+export const { AddNFT, RemoveNFT, ErrorBuyingNFT, ErrorSpamingNFT } =
+  My_NFT_Slice.actions;

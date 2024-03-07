@@ -3,6 +3,7 @@ import { FaEthereum } from "react-icons/fa";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AddNFT } from "../ReduxToolkit/Slices/My_NFT_Slice";
+// import { ErrorSpamingNFT } from "../ReduxToolkit/Slices/My_NFT_Slice";
 import { singleProduct } from "../ReduxToolkit/Slices/My_NFT_Slice";
 import { ItemBought } from "../ReduxToolkit/Slices/CurrentBalance_Slice";
 import { RootState } from "../ReduxToolkit/store";
@@ -35,21 +36,37 @@ const GetNFT = () => {
     } else return false;
   };
 
+  const IsProcessingNFT = () => {
+    let proccessingNFT = allNFT.find(
+      (processing) => processing.Processing === true
+    );
+    if (proccessingNFT === undefined) {
+      return false;
+    } else return true;
+  };
+  console.log();
   const HandleBuyNFT = (e: singleProduct, price: number, ApeID: string) => {
-    dispatch(DataProccesing(ApeID));
-    setTimeout(() => {
-      if (CurrentBalance >= price && IsOwned(ApeID)) {
-        dispatch(ItemBought(price));
-        dispatch(AddNFT(e));
-        dispatch(DataProccesing(ApeID));
-      } else {
-        dispatch(ErrorBuyingNFT(true));
-        setTimeout(() => {
-          dispatch(ErrorBuyingNFT(false));
-        }, 2000);
-        dispatch(DataProccesing(ApeID));
-      }
-    }, 3000);
+    if (IsProcessingNFT() === false) {
+      dispatch(DataProccesing(ApeID));
+      setTimeout(() => {
+        if (CurrentBalance >= price && IsOwned(ApeID)) {
+          dispatch(ItemBought(price));
+          dispatch(AddNFT(e));
+          dispatch(DataProccesing(ApeID));
+        } else {
+          dispatch(ErrorBuyingNFT(true));
+          dispatch(DataProccesing(ApeID));
+          setTimeout(() => {
+            dispatch(ErrorBuyingNFT(false));
+          }, 2000);
+        }
+      }, 3000);
+    } else {
+      ////      dispatch(ErrorSpamingNFT(true));
+      //    setTimeout(() => {
+      //       dispatch(ErrorSpamingNFT(false));
+      //     }, 2000);
+    }
   };
 
   return (
