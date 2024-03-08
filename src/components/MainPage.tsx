@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import Introduction from "./Introduction";
-import WhyUs from "./WhyUs";
+import About from "./About";
 import NFTInsights from "./NFTInsights";
 import GetNFT from "./GetNFT";
 import Faq from "./Faq";
@@ -25,7 +25,7 @@ const MainPage = () => {
   return (
     <>
       <Introduction />
-      <WhyUs />
+      <About />
       <NFTInsights />
       <GetNFT />
       <Faq />

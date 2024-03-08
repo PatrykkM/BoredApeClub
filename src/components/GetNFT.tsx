@@ -2,6 +2,7 @@ import { IoIosArrowRoundDown } from "react-icons/io";
 import { FaEthereum } from "react-icons/fa";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import useWindowWidth from "../CustomFunctions/useWindowWidth";
 import { AddNFT } from "../ReduxToolkit/Slices/My_NFT_Slice";
 // import { ErrorSpamingNFT } from "../ReduxToolkit/Slices/My_NFT_Slice";
 import { singleProduct } from "../ReduxToolkit/Slices/My_NFT_Slice";
@@ -9,13 +10,13 @@ import { ItemBought } from "../ReduxToolkit/Slices/CurrentBalance_Slice";
 import { RootState } from "../ReduxToolkit/store";
 import { DataProccesing } from "../ReduxToolkit/Slices/All_NFTs_Slice";
 import { ErrorBuyingNFT } from "../ReduxToolkit/Slices/My_NFT_Slice";
+import { motion } from "framer-motion";
 
 const GetNFT = () => {
   const dispatch = useDispatch();
   const allNFT = useSelector((state: RootState) => state.All_NFTS.products);
   const MyNFT = useSelector((state: RootState) => state.HandleNFT.products);
-
-  const WindowWidth = window.innerWidth;
+  const width = useWindowWidth();
 
   const [active, setActive] = useState(true);
 
@@ -68,6 +69,31 @@ const GetNFT = () => {
       //     }, 2000);
     }
   };
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.15,
+      },
+    },
+  };
+
+  const childVariants = {
+    hidden: {
+      opacity: 0,
+      y: -40,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 10,
+        duration: 0.5,
+      },
+    },
+  };
 
   return (
     <section
@@ -75,24 +101,38 @@ const GetNFT = () => {
       id="NFTs"
     >
       <div className=" relative flex flex-col  items-center justify-center  max-w-lg  md:max-w-7xl p-5 md:px-2">
-        <h2 className="text-3xl text-Darker-White font-medium mt-4 md:text-4xl md:font-semibold lg:text-6xl">
+        <motion.h2
+          className="text-3xl text-Darker-White font-medium mt-4 md:text-4xl md:font-semibold lg:text-6xl"
+          initial={{ y: -30, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true, amount: 1 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+        >
           Get Our NFT here
-        </h2>
+        </motion.h2>
         <p className="text-sm text-uninportant-text text-center mt-4 font-light leading-6 md:max-w-md md:text-base">
           NFT Signals is the ultimate alpha group for beginner and experienced
           traders to make profit flipping NFTs.
         </p>
-        <div className=" w-full  flex flex-wrap mt-3 mb-12 justify-center ">
+        <motion.div
+          className=" w-full  flex flex-wrap mt-3 mb-12 justify-center "
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {allNFT.map((NFT, id) => (
-            <div
+            <motion.div
               className={`w-1/2 md:w-1/3 mt-4  md:p-4 max-w-76  ${
                 (id + 1) % 2 === 0 ? `pl-2` : `pr-2`
               } ${
-                (id > 5 && active && WindowWidth <= 1024) ||
-                (id > 7 && active && WindowWidth >= 1024)
+                (id > 5 && active && width < 1280) ||
+                (id > 7 && active && width >= 1280)
                   ? `hidden`
                   : null
               } `}
+              variants={childVariants}
+              key={NFT.ApeID}
             >
               <div className="transition-all bg-Lighter-Grey  w-full flex flex-col rounded-lg p-2 ">
                 <img
@@ -128,9 +168,9 @@ const GetNFT = () => {
                   </div>
                 )}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
         <div className="overflow-hidden flex justify-center items-center h-12 w-12 bg-main-background absolute -bottom-6 rounded-full border-2 border-Light-Green cursor-pointer">
           <div className="text-Light-Green " onClick={() => setActive(!active)}>
             {active ? (

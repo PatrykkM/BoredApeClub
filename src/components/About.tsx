@@ -2,10 +2,11 @@ import RichApe from "../assets/apesIMG/RichMonkeyIntroduction.png";
 import NetworkingApe from "../assets/apesIMG/MillionareNetworkingMonkeyIntroduction.png";
 import PartyApe from "../assets/apesIMG/PartyMonekyIntroduction.png";
 import ArmyApe from "../assets/apesIMG/ArmyMonkeyIntroduction.png";
+import { motion } from "framer-motion";
 
 import { useState } from "react";
 
-const WhyUs = () => {
+const About = () => {
   const [activeOption, setActiveOption] = useState(1);
   const options = [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }];
   const OptionComponents = [
@@ -93,9 +94,15 @@ const WhyUs = () => {
       <section className="bg-Light-Grey w-full flex items-center justify-center  ">
         <div className="w-full flex flex-col md:flex-row justify-center items-center max-w-lg md:max-w-7xl  px-5 md:px-7  md:my-6 lg:justify-between">
           <div className="flex flex-col self-start md:max-w-sm  mt-6 lg:max-w-xl">
-            <h3 className="text-3xl font-medium text-white md:text-5xl md:font-semibold lg:text-6xl ">
+            <motion.h3
+              className="text-3xl font-medium text-white md:text-5xl md:font-semibold lg:text-6xl"
+              initial={{ y: -30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 1 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            >
               Bored Ape Club Elite Digital Collectibles
-            </h3>
+            </motion.h3>
             <p className="mt-3 text-uninportant-text font-light lg:mt-6">
               The Premier Destination for Beginners and Veterans Alike to Profit
               from Buying and Flipping NFTs.
@@ -129,4 +136,4 @@ const WhyUs = () => {
   );
 };
 
-export default WhyUs;
+export default About;

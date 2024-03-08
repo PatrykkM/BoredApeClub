@@ -4,12 +4,18 @@ import { FaMinus } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../ReduxToolkit/store";
 import { ChangeActive } from "../ReduxToolkit/Slices/FAQ_Slice";
+import { motion } from "framer-motion";
+import useWindowWidth from "../CustomFunctions/useWindowWidth";
 
 const Faq = () => {
   const dispatch = useDispatch();
+
   const activeNumber = useSelector(
     (state: RootState) => state.FAQ_Slice.ActiveNumber
   );
+
+  const width = useWindowWidth();
+
   const FaqOptions = [
     {
       Title: "Who we are",
@@ -43,10 +49,22 @@ const Faq = () => {
             NFTs
           </div>
           <div className="md:w-full md:max-w-sm flex relative md:-mt-5 ">
-            <img
+            <motion.img
               src={mainApe}
               alt="Image of BoredApe"
-              className=" object-cover z-10 "
+              className="object-cover z-10"
+              initial={{
+                x: width >= 1024 ? -200 : -100,
+                opacity: 0,
+              }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 10,
+                duration: 0.5,
+              }}
             />
             <div className="absolute bg-Img-background w-full h-4/5 bottom-0 left-1/2 transform -translate-x-1/2 rounded-lg"></div>
           </div>

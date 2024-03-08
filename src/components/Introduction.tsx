@@ -5,6 +5,7 @@ import arrow from "../assets/IMG/Arrow.jpg";
 import { scrollToElement } from "../CustomFunctions/CustomScrollToElement";
 import { useDispatch } from "react-redux";
 import { ChangeActive } from "../ReduxToolkit/Slices/FAQ_Slice";
+import { motion } from "framer-motion";
 
 const Introduction = () => {
   const dispatch = useDispatch();
@@ -27,7 +28,12 @@ const Introduction = () => {
         >
           <div className="w-full md:flex flex-row-reverse justify-end items-center  ">
             <div className="relative flex flex-col text-white text-5xl sm:text-6xl font-bold text-center  md:text-start  md:text-7xl lg:text-8xl xl:text-9xl md:ml-12 xl:mt-4 xl:ml-28">
-              <div className="leading-">
+              <motion.div
+                initial={{ y: -30, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true, amount: 1 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >
                 <h1>Start Making</h1>
                 <h1>Money With</h1>
                 <div className="flex items-center justify-center mt-1">
@@ -36,7 +42,7 @@ const Introduction = () => {
                     <div className="absolute w-3 h-3 bg-Arrow-Dark-White rotate-45 -top-[6px] -right-1"></div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
             <div className="md:w-1/3 md:max-w-80 flex flex-col items-center md:items-start  ">
               <img src={arrow} className=" w-full hidden md:block" />
