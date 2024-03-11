@@ -1,0 +1,17 @@
+{
+  "tabWidth": 2,
+  "semi": true,
+  "trailingComma": "all",
+  "printWidth": 100,
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "useTabs": true,
+  "tailwindConfig": "./tailwind.config.js",
+  "importOrder": ["react", "^components/(.*)$", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "plugins": [
+    "@trivago/prettier-plugin-sort-imports",
+    "prettier-plugin-tailwindcss"
+  ]
+}
