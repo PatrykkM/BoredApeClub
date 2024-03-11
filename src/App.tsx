@@ -5,7 +5,7 @@ import { store } from "./ReduxToolkit/store";
 import ErrorBuyingNFT from "./components/Layouts/ErrorBuyingNFT";
 import ErrorPage from "./components/Layouts/ErrorPage";
 import Footer from "./components/Layouts/Footer";
-import Header from "./components/Layouts/Header";
+import Header from "./components/Layouts/Header/Header";
 import MainPage from "./components/Layouts/MainPage";
 import MyNFTsPage from "./components/Layouts/MyNFTsPage";
 

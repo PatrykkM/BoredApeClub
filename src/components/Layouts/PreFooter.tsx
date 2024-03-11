@@ -1,5 +1,5 @@
-import { scrollToElement } from "../../CustomFunctions/scrollToElement";
 import mainApe from "../../assets/apesIMG/FaqApe-Bgclear.png";
+import { scrollToElement } from "../../customFunctions/scrollToElement";
 
 const PreFotter = () => {
 	const handleClick = (e: React.MouseEvent<HTMLButtonElement>, href: string) => {

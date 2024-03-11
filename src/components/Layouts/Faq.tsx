@@ -1,20 +1,11 @@
 import { motion } from "framer-motion";
 
-import { FaMinus } from "react-icons/fa";
-import { FaPlus } from "react-icons/fa6";
-import { useDispatch, useSelector } from "react-redux";
-
-import { ChangeActive } from "../../ReduxToolkit/Slices/FaqSlice";
-import { RootState } from "../../ReduxToolkit/store";
 import mainApe from "../../assets/apesIMG/FaqApe1-Bgclear.png";
-import { faqOptions } from "../../constans";
+import { faqOptionsDesc } from "../../constans";
 import useWindowWidth from "../../hooks/useWindowWidth";
+import FaqOption from "../common/FaqOption";
 
 const Faq = () => {
-	const dispatch = useDispatch();
-
-	const activeNumber = useSelector((state: RootState) => state.FAQ_Slice.ActiveNumber);
-
 	const width = useWindowWidth();
 
 	return (
@@ -33,8 +24,8 @@ const Faq = () => {
 							src={mainApe}
 							alt="Image of BoredApe"
 							className="z-10 object-cover"
-							initial={{
-								x: width >= 1024 ? -200 : -100,
+							animate={{
+								x: width >= 1024 ? -210 : -100,
 								opacity: 0,
 							}}
 							whileInView={{ x: 0, opacity: 1 }}
@@ -50,36 +41,8 @@ const Faq = () => {
 					</div>
 				</div>
 				<div className="mt-6 flex grow flex-col md:mt-0 lg:mt-12 ">
-					{faqOptions.map((Faq, id) => (
-						<div key={id}>
-							<div className="  mb-3 flex   flex-col border-b border-uninportant-text text-xl font-light text-Darker-White md:text-2xl ">
-								<div className="flex   w-full items-center justify-between">
-									<div className="mb-1 ">{Faq.Title}</div>
-									<div className="mb-1 cursor-pointer text-lg">
-										{activeNumber === id + 1 ? (
-											<FaMinus onClick={() => dispatch(ChangeActive(0))} />
-										) : (
-											<FaPlus onClick={() => dispatch(ChangeActive(id + 1))} />
-										)}
-									</div>
-								</div>
-								<div
-									className={`mb-2 flex   items-center overflow-hidden transition-all duration-75   ${
-										activeNumber === id + 1 ? `h-auto` : ` h-0`
-									}`}
-								>
-									<div
-										className={` overflow-hidden text-xs font-light text-uninportant-text transition-all duration-75 lg:text-sm  ${
-											activeNumber === id + 1
-												? ` translate-y-0 opacity-100`
-												: ` -translate-y-full opacity-0`
-										}`}
-									>
-										<div className="md:max-w-md ">{Faq.desc}</div>
-									</div>
-								</div>
-							</div>
-						</div>
+					{faqOptionsDesc.map((Faq, id) => (
+						<FaqOption Faq={Faq} id={id} key={id} />
 					))}
 				</div>
 			</section>

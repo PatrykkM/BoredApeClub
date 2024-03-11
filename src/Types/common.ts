@@ -1,7 +1,7 @@
-import { singleProduct } from "../ReduxToolkit/Slices/AllNFTsSlice";
-
-export interface SingleNftProps {
-	id: number;
-	NFT: singleProduct;
-	active: boolean;
+export interface singleProduct {
+	Img: string;
+	ApeID: string;
+	Price: number;
+	Subtitle: string;
+	Processing: boolean;
 }

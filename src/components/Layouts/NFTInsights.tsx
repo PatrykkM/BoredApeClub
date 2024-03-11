@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { BiSolidLeftArrow } from "react-icons/bi";
 import { useDispatch } from "react-redux";
 
-import { scrollToElement } from "../../CustomFunctions/scrollToElement";
 import { ChangeActive } from "../../ReduxToolkit/Slices/FaqSlice";
 import BubblegumApe from "../../assets/apesIMG/BubblegumApeInsights.png";
+import { scrollToElement } from "../../customFunctions/scrollToElement";
 import useWindowWidth from "../../hooks/useWindowWidth";
 
 const NFTInsights = () => {
@@ -72,7 +72,7 @@ const NFTInsights = () => {
 						src={BubblegumApe}
 						alt="Image of BoredApe"
 						className="z-10 w-full object-cover "
-						initial={{
+						animate={{
 							x: width >= 1024 ? -200 : -100,
 							opacity: 0,
 						}}

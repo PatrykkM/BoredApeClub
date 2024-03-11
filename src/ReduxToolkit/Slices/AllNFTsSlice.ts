@@ -1,14 +1,8 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-import { allNFT } from "../../NFT_Products/products";
+import { allNFT } from "../../NftProducts/products";
+import { singleProduct } from "../../Types/common";
 
-export interface singleProduct {
-	Img: string;
-	ApeID: string;
-	Price: number;
-	Subtitle: string;
-	Processing: boolean;
-}
 interface initialStateType {
 	products: singleProduct[];
 }
@@ -17,8 +11,8 @@ const initialState: initialStateType = {
 	products: allNFT,
 };
 
-export const All_NFT_Slice = createSlice({
-	name: "All_NFT_Slice",
+export const AllNFTSlice = createSlice({
+	name: "AllNFTSlice",
 	initialState,
 	reducers: {
 		DataProccesing: (state, action: PayloadAction<string>) => {
@@ -30,4 +24,4 @@ export const All_NFT_Slice = createSlice({
 	},
 });
 
-export const { DataProccesing } = All_NFT_Slice.actions;
+export const { DataProccesing } = AllNFTSlice.actions;

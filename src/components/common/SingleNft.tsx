@@ -5,18 +5,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { DataProccesing } from "../../ReduxToolkit/Slices/AllNFTsSlice";
 import { ItemBought } from "../../ReduxToolkit/Slices/CurrentBalanceSlice";
 import { AddNFT } from "../../ReduxToolkit/Slices/MyNftSlice";
-import { singleProduct } from "../../ReduxToolkit/Slices/MyNftSlice";
 import { ErrorBuyingNFT } from "../../ReduxToolkit/Slices/MyNftSlice";
 import { RootState } from "../../ReduxToolkit/store";
-import { SingleNftProps } from "../../Types/common";
+import { SingleNftProps } from "../../Types/PropsTypes";
+import { singleProduct } from "../../Types/common";
 import useWindowWidth from "../../hooks/useWindowWidth";
 
-const SingleNft: React.FC<SingleNftProps> = ({ id, NFT, active }) => {
+const SingleNft = ({ id, NFT, active }: SingleNftProps) => {
 	const dispatch = useDispatch();
+
 	const width = useWindowWidth();
 
-	const CurrentBalance = useSelector((state: RootState) => state.CurrentBalance_Slice.Balance);
-	const allNFT = useSelector((state: RootState) => state.All_NFTS.products);
+	const CurrentBalance = useSelector((state: RootState) => state.CurrentBalanceSlice.Balance);
+	const allNFT = useSelector((state: RootState) => state.AllNFTS.products);
 	const MyNFT = useSelector((state: RootState) => state.HandleNFT.products);
 
 	const IsOwned = (e: string) => {
@@ -82,7 +83,6 @@ const SingleNft: React.FC<SingleNftProps> = ({ id, NFT, active }) => {
 				(id > 5 && active && width < 1280) || (id > 7 && active && width >= 1280) ? `hidden` : null
 			} `}
 			variants={childVariants}
-			key={NFT.ApeID}
 		>
 			<div className="flex w-full  flex-col rounded-lg bg-Lighter-Grey p-2 transition-all ">
 				<img

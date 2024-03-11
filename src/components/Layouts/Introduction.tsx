@@ -4,10 +4,10 @@ import { FaCheck } from "react-icons/fa";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { useDispatch } from "react-redux";
 
-import { scrollToElement } from "../../CustomFunctions/scrollToElement";
 import { ChangeActive } from "../../ReduxToolkit/Slices/FaqSlice";
 import arrow from "../../assets/IMG/Arrow.jpg";
 import mainApe from "../../assets/apesIMG/MainApe.png";
+import { scrollToElement } from "../../customFunctions/scrollToElement";
 
 const Introduction = () => {
 	const dispatch = useDispatch();

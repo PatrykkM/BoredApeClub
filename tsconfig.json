@@ -20,6 +20,6 @@
 		"noUnusedParameters": true,
 		"noFallthroughCasesInSwitch": true
 	},
-	"include": ["src", "src/CustomFunctions/scrollToElement.ts"],
+	"include": ["src", "src/customFunctions/scrollToElement.ts"],
 	"references": [{ "path": "./tsconfig.node.json" }]
 }

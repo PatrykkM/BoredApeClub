@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-import { scrollToElement } from "../../CustomFunctions/scrollToElement";
+import { scrollToElement } from "../../customFunctions/scrollToElement";
 import About from "./About";
+import BuyNftSection from "./BuyNftSection";
 import Faq from "./Faq";
-import GetNFT from "./GetNFT";
 import Introduction from "./Introduction";
 import NFTInsights from "./NFTInsights";
 import PreFotter from "./PreFooter";
@@ -27,7 +27,7 @@ const MainPage = () => {
 			<Introduction />
 			<About />
 			<NFTInsights />
-			<GetNFT />
+			<BuyNftSection />
 			<Faq />
 			<PreFotter />
 		</>

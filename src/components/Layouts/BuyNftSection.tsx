@@ -8,8 +8,8 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../ReduxToolkit/store";
 import SingleNft from "../common/SingleNft";
 
-const GetNFT = () => {
-	const allNFT = useSelector((state: RootState) => state.All_NFTS.products);
+const BuyNftSection = () => {
+	const allNFT = useSelector((state: RootState) => state.AllNFTS.products);
 
 	const [active, setActive] = useState(true);
 
@@ -45,7 +45,7 @@ const GetNFT = () => {
 					viewport={{ once: true }}
 				>
 					{allNFT.map((NFT, id) => (
-						<SingleNft NFT={NFT} id={id} active={active} />
+						<SingleNft NFT={NFT} id={id} active={active} key={NFT.ApeID} />
 					))}
 				</motion.div>
 				<div className="absolute -bottom-6 flex h-12 w-12 cursor-pointer items-center justify-center overflow-hidden rounded-full border-2 border-Light-Green bg-main-background">
@@ -66,4 +66,4 @@ const GetNFT = () => {
 	);
 };
 
-export default GetNFT;
+export default BuyNftSection;

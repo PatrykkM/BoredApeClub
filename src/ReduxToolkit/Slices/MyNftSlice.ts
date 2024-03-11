@@ -1,12 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-export interface singleProduct {
-	Img: string;
-	ApeID: string;
-	Price: number;
-	Subtitle: string;
-	Processing: boolean;
-}
+import { singleProduct } from "../../Types/common";
+
 export interface Errors {
 	NoMoney: boolean;
 	Spamming: boolean;
@@ -24,8 +19,8 @@ const initialState: initialStateType = {
 	},
 };
 
-export const My_NFT_Slice = createSlice({
-	name: "My_NFT_Slice",
+export const MyNFTSlice = createSlice({
+	name: "MyNFTSlice",
 	initialState,
 	reducers: {
 		AddNFT: (state, action: PayloadAction<singleProduct>) => {
@@ -50,4 +45,4 @@ export const My_NFT_Slice = createSlice({
 });
 
 export const { AddNFT, RemoveNFT, ErrorBuyingNFT, ErrorSpamingNFT, DataProccesing } =
-	My_NFT_Slice.actions;
+	MyNFTSlice.actions;

@@ -4,8 +4,8 @@ const initialState = {
 	Balance: 150000,
 };
 
-export const CurrentBalance_Slice = createSlice({
-	name: "CurrentBalance_Slice",
+export const CurrentBalanceSlice = createSlice({
+	name: "CurrentBalanceSlice",
 	initialState,
 	reducers: {
 		ItemBought: (state, action: PayloadAction<number>) => {
@@ -17,4 +17,4 @@ export const CurrentBalance_Slice = createSlice({
 	},
 });
 
-export const { ItemBought, ItemSold } = CurrentBalance_Slice.actions;
+export const { ItemBought, ItemSold } = CurrentBalanceSlice.actions;

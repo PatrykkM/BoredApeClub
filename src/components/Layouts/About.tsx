@@ -2,14 +2,15 @@ import { motion } from "framer-motion";
 
 import { useState } from "react";
 
-import { optionComponents } from "../../constans";
+import { optionDesc } from "../../constans";
+import AboutOption from "../common/AboutOption";
 
 const About = () => {
 	const [activeOption, setActiveOption] = useState(1);
 	const options = [{ number: 1 }, { number: 2 }, { number: 3 }, { number: 4 }];
 
 	const ActiveOption = () => {
-		return optionComponents.find((e) => e.id === activeOption);
+		return optionDesc.find((e) => e.id === activeOption);
 	};
 
 	return (
@@ -31,16 +32,13 @@ const About = () => {
 							Flipping NFTs.
 						</p>
 						<div className="mb-6 mt-6 flex w-full justify-around border-b-2 border-neutral-800 lg:mt-12">
-							{options.map((option) => (
-								<div
-									onClick={() => setActiveOption(option.number)}
-									className={`${
-										activeOption === option.number ? `border-Light-Green` : `border-Lighter-Grey`
-									} mb-3 flex h-14 w-14 cursor-pointer items-center justify-center rounded-full border-2 bg-Lighter-Grey text-2xl text-white transition-all lg:mb-6`}
-									key={option.number}
-								>
-									{option.number}
-								</div>
+							{options.map((option, id) => (
+								<AboutOption
+									option={option}
+									setActiveOption={setActiveOption}
+									activeOption={activeOption}
+									key={id}
+								/>
 							))}
 						</div>
 						<div className="hidden flex-col font-light  text-uninportant-text md:flex  ">

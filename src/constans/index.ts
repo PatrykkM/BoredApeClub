@@ -3,7 +3,7 @@ import NetworkingApe from "../assets/apesIMG/MillionareNetworkingMonkeyIntroduct
 import PartyApe from "../assets/apesIMG/PartyMonekyIntroduction.png";
 import RichApe from "../assets/apesIMG/RichMonkeyIntroduction.png";
 
-export const optionComponents = [
+export const optionDesc = [
 	{
 		id: 1,
 		desc: "Elevate your portfolio with our unique NFTs, offering an impressive annual ROI of 41%. Dive into the digital asset market with our selection, blending the exclusivity of blockchain technology.",
@@ -25,7 +25,7 @@ export const optionComponents = [
 		img: ArmyApe,
 	},
 ];
-export const faqOptions = [
+export const faqOptionsDesc = [
 	{
 		Title: "Who we are",
 		desc: `We're a group of remote IT professionals who've crafted NFTs for enthusiasts at every level. Our goal is to unlock the NFT market for everyone, providing tools and insights for navigating this digital frontier with ease.`,

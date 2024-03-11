@@ -4,8 +4,8 @@ const initialState = {
 	ActiveNumber: 0,
 };
 
-export const FAQ_Slice = createSlice({
-	name: "FAQ_Slice",
+export const FAQSlice = createSlice({
+	name: "FAQSlice",
 	initialState,
 	reducers: {
 		ChangeActive: (state, action: PayloadAction<number>) => {
@@ -14,4 +14,4 @@ export const FAQ_Slice = createSlice({
 	},
 });
 
-export const { ChangeActive } = FAQ_Slice.actions;
+export const { ChangeActive } = FAQSlice.actions;
