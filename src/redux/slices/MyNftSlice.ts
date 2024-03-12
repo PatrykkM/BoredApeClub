@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-import { singleProduct } from "../../typess/common";
+import { singleProduct } from "../../types/common";
 
 export interface Errors {
 	NoMoney: boolean;
