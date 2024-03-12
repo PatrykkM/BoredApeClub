@@ -1,15 +1,14 @@
 import { motion } from "framer-motion";
 
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { useDispatch } from "react-redux";
 
-import { ChangeActive } from "../../../redux/slices/FaqSlice";
 import arrow from "../../../assets/IMG/Arrow.jpg";
 import mainApe from "../../../assets/apesIMG/MainApe.png";
-import { IntroductionDesc } from "../../../constans";
-import { scrollToElement } from "../../../customFunctions/scrollToElement";
+import { scrollToElement } from "../../../customFunctionss/scrollToElement";
+import { ChangeActive } from "../../../redux/slices/FaqSlice";
 import { fadeInView } from "../../../utils/motion";
-import IntroductionSingleDesc from "../../common/IntroductionSingleDesc";
+import NftClubDesc from "./NftClubDesc";
+import ScrollDownArrow from "./ScrollDownArrow";
 
 const Introduction = () => {
 	const dispatch = useDispatch();
@@ -59,34 +58,8 @@ const Introduction = () => {
 					</div>
 					<div className="mt-6 flex    grow  md:mt-0 md:items-end">
 						<div className="flex grow  md:h-4/5 md:w-full  md:items-center md:justify-around ">
-							<div className=" flex h-44 w-44 flex-col items-center rounded-lg bg-Img-background  md:h-52 md:w-52 lg:h-60 lg:w-2/5">
-								<div className="flex grow flex-col px-3 py-2 text-lg text-white md:p-4 lg:justify-center lg:p-5 ">
-									<h4 className="font-medium md:text-xl lg:text-3xl">NFT club</h4>
-									<div className="my-1  flex items-center ">
-										<div className=" hexagon h-8 w-7 text-xs font-semibold text-Custom-Grey md:h-9 md:w-8">
-											NFT
-										</div>
-										<p className="ml-4 text-3xl text-Light-Green md:text-4xl">+550%</p>
-									</div>
-									<div className="flex grow flex-col justify-around lg:justify-around  ">
-										{IntroductionDesc.map((item) => (
-											<IntroductionSingleDesc item={item} />
-										))}
-									</div>
-								</div>
-							</div>
-							<div className="flex grow flex-col items-center  justify-center md:mr-10 md:grow-0">
-								<div className="ml-9 flex flex-col items-center md:ml-0">
-									<div className="flex h-36 w-12 items-center justify-center rounded-full bg-Img-background lg:h-44 lg:w-16">
-										<div className=" relative h-3/4 w-1 rounded-full bg-Light-Green ">
-											<div className=" absolute -bottom-8 left-1/2 -translate-x-1/2 -translate-y-1/2 transform text-4xl text-Light-Green">
-												<MdOutlineKeyboardArrowDown />
-											</div>
-										</div>
-									</div>
-									<div className="mt-1 font-extralight text-white">Scroll down</div>
-								</div>
-							</div>
+							<NftClubDesc />
+							<ScrollDownArrow />
 						</div>
 					</div>
 				</section>

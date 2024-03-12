@@ -1,4 +1,4 @@
-import { NavMobileItemProps } from "../../../types/propsTypes";
+import { NavMobileItemProps } from "../../../typess/propsTypess";
 
 const MobileNavItem = ({ li, handleClick }: NavMobileItemProps) => {
 	return (

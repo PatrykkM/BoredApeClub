@@ -8,8 +8,9 @@ import { ItemBought } from "../../redux/slices/CurrentBalanceSlice";
 import { AddNFT } from "../../redux/slices/MyNftSlice";
 import { ErrorBuyingNFT } from "../../redux/slices/MyNftSlice";
 import { RootState } from "../../redux/store";
-import { singleProduct } from "../../types/common";
-import { SingleNftProps } from "../../types/propsTypes";
+import { singleProduct } from "../../typess/common";
+import { SingleNftProps } from "../../typess/propsTypess";
+import { childVariants } from "../../utils/motion";
 
 const SingleNft = ({ id, NFT, active }: SingleNftProps) => {
 	const dispatch = useDispatch();
@@ -60,23 +61,6 @@ const SingleNft = ({ id, NFT, active }: SingleNftProps) => {
 		} else return;
 	};
 
-	const childVariants = {
-		hidden: {
-			opacity: 0,
-			y: -40,
-		},
-		visible: {
-			opacity: 1,
-			y: 0,
-			transition: {
-				type: "spring",
-				stiffness: 100,
-				damping: 10,
-				duration: 0.5,
-			},
-		},
-	};
-
 	return (
 		<motion.div
 			className={`mt-4 w-1/2 max-w-76  md:w-1/3 md:p-4  ${(id + 1) % 2 === 0 ? `pl-2` : `pr-2`} ${
@@ -90,12 +74,12 @@ const SingleNft = ({ id, NFT, active }: SingleNftProps) => {
 					className="h-36 w-full rounded-lg object-cover  transition-all xs:h-auto  md:max-h-64 "
 				/>
 				<div className="mt-3 flex w-full items-center justify-between  text-sm text-white md:text-base ">
-					<div className="font-light">{NFT.ApeID}</div>
-					<div>{(NFT.Price / 3500).toFixed(1)}ETH</div>
+					<p className="font-light">{NFT.ApeID}</p>
+					<p> {(NFT.Price / 3500).toFixed(1)}ETH</p>
 				</div>
 				<div className="mt-1 flex w-full justify-between text-xs font-light text-uninportant-text md:text-sm">
-					<div>{NFT.Subtitle}</div>
-					<div>{NFT.Price} $</div>
+					<p>{NFT.Subtitle}</p>
+					<p>{NFT.Price} $</p>
 				</div>
 
 				{IsOwned(NFT.ApeID) ? (

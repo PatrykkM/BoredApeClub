@@ -17,9 +17,9 @@ const Faq = () => {
 			>
 				<div className="md:max-w-ms md:w-1/2 md:flex-col md:pr-10">
 					<h3 className="text-3xl font-medium uppercase text-Darker-White md:text-4xl">Faq</h3>
-					<div className="mt-6 font-light text-uninportant-text md:mt-3">
+					<p className="mt-6 font-light text-uninportant-text md:mt-3">
 						NFT FAQ is the ultimate aplha group for great & Experienced Flipping NFTs
-					</div>
+					</p>
 					<div className="relative flex md:-mt-5 md:w-full md:max-w-sm ">
 						<motion.img
 							src={mainApe}

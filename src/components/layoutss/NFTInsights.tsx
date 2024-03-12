@@ -4,7 +4,7 @@ import { BiSolidLeftArrow } from "react-icons/bi";
 import { useDispatch } from "react-redux";
 
 import BubblegumApe from "../../assets/apesIMG/BubblegumApeInsights.png";
-import { scrollToElement } from "../../customFunctions/scrollToElement";
+import { scrollToElement } from "../../customFunctionss/scrollToElement";
 import useWindowWidth from "../../hooks/useWindowWidth";
 import { ChangeActive } from "../../redux/slices/FaqSlice";
 import { fadeInView } from "../../utils/motion";

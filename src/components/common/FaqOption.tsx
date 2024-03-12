@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { ChangeActive } from "../../redux/slices/FaqSlice";
 import { RootState } from "../../redux/store";
-import { FaqOptionsProps } from "../../types/propsTypes";
+import { FaqOptionsProps } from "../../typess/propsTypess";
 
 const FaqOption = ({ Faq, id }: FaqOptionsProps) => {
 	const dispatch = useDispatch();
@@ -13,7 +13,7 @@ const FaqOption = ({ Faq, id }: FaqOptionsProps) => {
 	return (
 		<div className="mb-3 flex flex-col border-b border-uninportant-text text-xl font-light text-Darker-White md:text-2xl">
 			<div className="flex  w-full items-center justify-between">
-				<div className="mb-1">{Faq.Title}</div>
+				<h4 className="mb-1">{Faq.Title}</h4>
 				<div className="mb-1 cursor-pointer text-lg">
 					{activeNumber === id + 1 ? (
 						<FaMinus onClick={() => dispatch(ChangeActive(0))} />
@@ -32,7 +32,7 @@ const FaqOption = ({ Faq, id }: FaqOptionsProps) => {
 						activeNumber === id + 1 ? `translate-y-0 opacity-100` : `-translate-y-full opacity-0`
 					}`}
 				>
-					<div className="md:max-w-md ">{Faq.desc}</div>
+					<p className="md:max-w-md ">{Faq.desc}</p>
 				</div>
 			</div>
 		</div>

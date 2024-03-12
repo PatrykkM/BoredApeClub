@@ -40,7 +40,7 @@ const About = () => {
 							))}
 						</div>
 						<div className="hidden flex-col font-light  text-uninportant-text md:flex  ">
-							<div className="">{ActiveOption()?.desc}</div>
+							<p>{ActiveOption()?.desc}</p>
 						</div>
 					</div>
 					<div className="hidden grow items-center md:ml-5  md:flex md:justify-end ">
@@ -51,7 +51,7 @@ const About = () => {
 					</div>
 					<div className="flex flex-col  font-light text-uninportant-text  ">
 						<div className="md:hidden">
-							<div>{ActiveOption()?.desc}</div>
+							<p>{ActiveOption()?.desc}</p>
 							<div className="flex grow items-center md:ml-5 md:justify-end ">
 								<img
 									src={ActiveOption()?.img}

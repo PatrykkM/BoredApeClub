@@ -4,8 +4,8 @@ import { ItemSold } from "../../redux/slices/CurrentBalanceSlice";
 import { RemoveNFT } from "../../redux/slices/MyNftSlice";
 import { DataProccesing } from "../../redux/slices/MyNftSlice";
 import { RootState } from "../../redux/store";
-import { singleProduct } from "../../types/common";
-import { OwnedSingleNftProps } from "../../types/propsTypes";
+import { singleProduct } from "../../typess/common";
+import { OwnedSingleNftProps } from "../../typess/propsTypess";
 
 const OwnedSingleNft = ({ id, NFT }: OwnedSingleNftProps) => {
 	const dispatch = useDispatch();
@@ -42,12 +42,12 @@ const OwnedSingleNft = ({ id, NFT }: OwnedSingleNftProps) => {
 					className="h-36 w-full rounded-lg object-cover  transition-all xs:h-auto  md:max-h-64 "
 				/>
 				<div className="mt-3 flex w-full items-center justify-between  text-sm text-white md:text-base ">
-					<div className="font-light">{NFT.ApeID}</div>
-					<div>{(NFT.Price / 3500).toFixed(1)}ETH</div>
+					<p className="font-light">{NFT.ApeID}</p>
+					<p>{(NFT.Price / 3500).toFixed(1)}ETH</p>
 				</div>
 				<div className="mt-1 flex w-full justify-between text-xs font-light text-uninportant-text md:text-sm">
-					<div>{NFT.Subtitle}</div>
-					<div>{NFT.Price} $</div>
+					<p>{NFT.Subtitle}</p>
+					<p>{NFT.Price} $</p>
 				</div>
 				{NFT.Processing ? (
 					<div className="mt-2 flex h-11 w-full items-center justify-center rounded-lg border border-Light-Green font-light text-white md:mt-4">

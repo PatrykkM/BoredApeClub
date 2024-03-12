@@ -36,3 +36,20 @@ export const containerMotion = () => ({
 	whileInView: "visible",
 	viewport: { once: true },
 });
+
+export const childVariants = {
+	hidden: {
+		opacity: 0,
+		y: -40,
+	},
+	visible: {
+		opacity: 1,
+		y: 0,
+		transition: {
+			type: "spring",
+			stiffness: 100,
+			damping: 10,
+			duration: 0.5,
+		},
+	},
+};

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-import { scrollToElement } from "../../customFunctions/scrollToElement";
+import { scrollToElement } from "../../customFunctionss/scrollToElement";
 import About from "./About";
 import BuyNftSection from "./BuyNftSection";
 import Faq from "./Faq";

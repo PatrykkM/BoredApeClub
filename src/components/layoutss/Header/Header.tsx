@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { Nav } from "../../../constans";
-import { scrollToElement } from "../../../customFunctions/scrollToElement";
+import { scrollToElement } from "../../../customFunctionss/scrollToElement";
 import { RootState } from "../../../redux/store";
 import DesktopNav from "../../common/Navs/DesktopNav";
 import ActiveMobileNav from "./ActiveMobileNav";

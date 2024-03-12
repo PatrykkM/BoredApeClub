@@ -1,4 +1,4 @@
-import { AboutOptionProps } from "../../types/propsTypes";
+import { AboutOptionProps } from "../../typess/propsTypess";
 
 const AboutOption = ({ option, setActiveOption, activeOption }: AboutOptionProps) => {
 	return (
