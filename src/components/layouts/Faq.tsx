@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import mainApe from "../../assets/apesIMG/FaqApe1-Bgclear.png";
+import FaqApe from "../../assets/apesIMG/FaqApe.png";
 import { faqOptionsDesc } from "../../constans";
 import useWindowWidth from "../../hooks/useWindowWidth";
 import { slideInWithScreenSize } from "../../utils/motion";
@@ -22,7 +22,7 @@ const Faq = () => {
 					</p>
 					<div className="relative flex md:-mt-5 md:w-full md:max-w-sm ">
 						<motion.img
-							src={mainApe}
+							src={FaqApe}
 							alt="Image of BoredApe"
 							className="z-10 object-cover"
 							{...slideInWithScreenSize(width)}
