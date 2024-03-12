@@ -2,9 +2,9 @@ import { FaMinus } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 
-import { ChangeActive } from "../../ReduxToolkit/Slices/FaqSlice";
-import { RootState } from "../../ReduxToolkit/store";
-import { FaqOptionsProps } from "../../Types/PropsTypes";
+import { ChangeActive } from "../../redux/slices/FaqSlice";
+import { RootState } from "../../redux/store";
+import { FaqOptionsProps } from "../../types/propsTypes";
 
 const FaqOption = ({ Faq, id }: FaqOptionsProps) => {
 	const dispatch = useDispatch();
@@ -28,7 +28,7 @@ const FaqOption = ({ Faq, id }: FaqOptionsProps) => {
 				}`}
 			>
 				<div
-					className={`overflow-hidden text-xs font-light text-uninportant-text transition-all duration-75 lg:text-sm  ${
+					className={`overflow-hidden text-xs font-light text-uninportant-text transition-all duration-75 lg:text-sm ${
 						activeNumber === id + 1 ? `translate-y-0 opacity-100` : `-translate-y-full opacity-0`
 					}`}
 				>

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 import { optionDesc } from "../../constans";
+import { fadeInView } from "../../utils/motion";
 import AboutOption from "../common/AboutOption";
 
 const About = () => {
@@ -20,10 +21,7 @@ const About = () => {
 					<div className="mt-6 flex flex-col self-start  md:max-w-sm lg:max-w-xl">
 						<motion.h3
 							className="text-3xl font-medium text-white md:text-5xl md:font-semibold lg:text-6xl"
-							initial={{ y: -30, opacity: 0 }}
-							whileInView={{ y: 0, opacity: 1 }}
-							viewport={{ once: true, amount: 1 }}
-							transition={{ duration: 0.3, ease: "easeOut" }}
+							{...fadeInView()}
 						>
 							Bored Ape Club Elite Digital Collectibles
 						</motion.h3>

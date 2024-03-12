@@ -5,7 +5,7 @@ import { scrollToElement } from "../../customFunctions/scrollToElement";
 import About from "./About";
 import BuyNftSection from "./BuyNftSection";
 import Faq from "./Faq";
-import Introduction from "./Introduction";
+import Introduction from "./Introduction/Introduction";
 import NFTInsights from "./NFTInsights";
 import PreFotter from "./PreFooter";
 

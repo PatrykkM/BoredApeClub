@@ -1,8 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 
-import { NavDesktopOptionsProps } from "../../Types/PropsTypes";
-import { Nav } from "../../constans";
-import { scrollToElement } from "../../customFunctions/scrollToElement";
+import { Nav } from "../../../constans";
+import { scrollToElement } from "../../../customFunctions/scrollToElement";
+import { NavDesktopOptionsProps } from "../../../types/propsTypes";
 
 const DesktopNav = ({ id, li, setActive, active }: NavDesktopOptionsProps) => {
 	const navigate = useNavigate();

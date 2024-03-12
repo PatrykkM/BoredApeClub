@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-import { allNFT } from "../../NftProducts/products";
-import { singleProduct } from "../../Types/common";
+import { allNFT } from "../../nftProducts/products";
+import { singleProduct } from "../../types/common";
 
 interface initialStateType {
 	products: singleProduct[];

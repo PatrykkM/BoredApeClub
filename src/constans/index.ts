@@ -74,3 +74,14 @@ export const MobileNav = [
 		name: "NFTs",
 	},
 ];
+export const IntroductionDesc = [
+	{
+		desc: "41% + Average ROI",
+	},
+	{
+		desc: "Get Daily updates",
+	},
+	{
+		desc: "NFT education program",
+	},
+];

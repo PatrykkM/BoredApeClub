@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import { AllNFTSlice } from "./Slices/AllNFTsSlice";
-import { CurrentBalanceSlice } from "./Slices/CurrentBalanceSlice";
-import { FAQSlice } from "./Slices/FaqSlice";
-import { MyNFTSlice } from "./Slices/MyNftSlice";
+import { AllNFTSlice } from "./slices/AllNFTsSlice";
+import { CurrentBalanceSlice } from "./slices/CurrentBalanceSlice";
+import { FAQSlice } from "./slices/FaqSlice";
+import { MyNFTSlice } from "./slices/MyNftSlice";
 
 export const store = configureStore({
 	reducer: {

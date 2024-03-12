@@ -3,14 +3,17 @@ import { motion } from "framer-motion";
 import { BiSolidLeftArrow } from "react-icons/bi";
 import { useDispatch } from "react-redux";
 
-import { ChangeActive } from "../../ReduxToolkit/Slices/FaqSlice";
 import BubblegumApe from "../../assets/apesIMG/BubblegumApeInsights.png";
 import { scrollToElement } from "../../customFunctions/scrollToElement";
 import useWindowWidth from "../../hooks/useWindowWidth";
+import { ChangeActive } from "../../redux/slices/FaqSlice";
+import { fadeInView } from "../../utils/motion";
+import { slideInWithScreenSize } from "../../utils/motion";
 
 const NFTInsights = () => {
 	const dispatch = useDispatch();
 	const width = useWindowWidth();
+
 	const handleClick = (e: React.MouseEvent<HTMLButtonElement>, href: string) => {
 		e.preventDefault();
 		scrollToElement(e, href);
@@ -29,22 +32,10 @@ const NFTInsights = () => {
 						</div>
 					</div>
 					<div className=" mt-3 text-center text-2xl font-medium text-white md:text-start md:text-4xl lg:text-6xl">
-						<motion.h2
-							className="block md:hidden"
-							initial={{ y: -30, opacity: 0 }}
-							whileInView={{ y: 0, opacity: 1 }}
-							viewport={{ once: true, amount: 0.5 }}
-							transition={{ duration: 0.3, ease: "easeOut" }}
-						>
+						<motion.h2 className="block md:hidden" {...fadeInView()}>
 							Game-Changer For Online Investment Strategy
 						</motion.h2>
-						<motion.div
-							className="hidden md:block"
-							initial={{ y: -30, opacity: 0 }}
-							whileInView={{ y: 0, opacity: 1 }}
-							viewport={{ once: true, amount: 0.5 }}
-							transition={{ duration: 0.3, ease: "easeOut" }}
-						>
+						<motion.div className="hidden md:block" {...fadeInView()}>
 							<h2>Game-Changer For</h2>
 							<h2>Online Investment</h2>
 							<div className="flex items-center">
@@ -72,18 +63,7 @@ const NFTInsights = () => {
 						src={BubblegumApe}
 						alt="Image of BoredApe"
 						className="z-10 w-full object-cover "
-						animate={{
-							x: width >= 1024 ? -200 : -100,
-							opacity: 0,
-						}}
-						whileInView={{ x: 0, opacity: 1 }}
-						viewport={{ once: true, amount: 0.5 }}
-						transition={{
-							type: "spring",
-							stiffness: 100,
-							damping: 10,
-							duration: 1.5,
-						}}
+						{...slideInWithScreenSize(width)}
 					/>
 					<div className="absolute bottom-0 left-1/2 h-4/5 w-full -translate-x-1/2 transform rounded-lg bg-Img-background"></div>
 				</div>

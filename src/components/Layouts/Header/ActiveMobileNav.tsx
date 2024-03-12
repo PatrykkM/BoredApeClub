@@ -1,27 +1,15 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import { ActiveMobileNavProps } from "../../../Types/PropsTypes";
 import { MobileNav } from "../../../constans";
-import { scrollToElement } from "../../../customFunctions/scrollToElement";
+import { ActiveMobileNavProps } from "../../../types/propsTypes";
+import MobileNavItem from "../../common/Navs/MobileNavItem";
 
 const ActiveMobileNav = ({
 	CurrentBalance,
 	handleActive,
 	active,
-	setActive,
+	handleClick,
 }: ActiveMobileNavProps) => {
-	const navigate = useNavigate();
-
-	const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-		e.preventDefault();
-		const targetId = href;
-		if (location.pathname !== "/BoredApeClub/") {
-			navigate("/BoredApeClub/", { state: { scrollTo: targetId } });
-		} else {
-			scrollToElement(e, href);
-		}
-		setActive(!active);
-	};
 	return (
 		<>
 			{active ? (
@@ -45,14 +33,7 @@ const ActiveMobileNav = ({
 						</div>
 					)}
 					{MobileNav.map((li) => (
-						<li key={li.name} className="list-none py-2">
-							<a
-								onClick={(e) => handleClick(e, li.name)}
-								className="transition-all hover:text-Light-Green "
-							>
-								{li.name}
-							</a>
-						</li>
+						<MobileNavItem li={li} handleClick={handleClick} />
 					))}
 				</div>
 			) : null}

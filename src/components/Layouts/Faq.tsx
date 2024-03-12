@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import mainApe from "../../assets/apesIMG/FaqApe1-Bgclear.png";
 import { faqOptionsDesc } from "../../constans";
 import useWindowWidth from "../../hooks/useWindowWidth";
+import { slideInWithScreenSize } from "../../utils/motion";
 import FaqOption from "../common/FaqOption";
 
 const Faq = () => {
@@ -24,18 +25,7 @@ const Faq = () => {
 							src={mainApe}
 							alt="Image of BoredApe"
 							className="z-10 object-cover"
-							animate={{
-								x: width >= 1024 ? -210 : -100,
-								opacity: 0,
-							}}
-							whileInView={{ x: 0, opacity: 1 }}
-							viewport={{ once: true, amount: 0.5 }}
-							transition={{
-								type: "spring",
-								stiffness: 100,
-								damping: 10,
-								duration: 0.5,
-							}}
+							{...slideInWithScreenSize(width)}
 						/>
 						<div className="absolute bottom-0 left-1/2 h-4/5 w-full -translate-x-1/2 transform rounded-lg bg-Img-background"></div>
 					</div>

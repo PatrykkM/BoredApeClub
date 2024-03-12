@@ -23,6 +23,7 @@ export interface FaqOptionsProps {
 	};
 	id: number;
 }
+
 export interface NavDesktopOptionsProps {
 	id: number;
 	li: {
@@ -31,9 +32,22 @@ export interface NavDesktopOptionsProps {
 	active: boolean;
 	setActive: (value: boolean) => void;
 }
+
 export interface ActiveMobileNavProps {
 	CurrentBalance: number;
 	handleActive: () => void;
 	active: boolean;
 	setActive: (value: boolean) => void;
+	handleClick: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
+}
+export interface NavMobileItemProps {
+	li: {
+		name: string;
+	};
+	handleClick: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
+}
+export interface IntroductionSingleDescProps {
+	item: {
+		desc: string;
+	};
 }

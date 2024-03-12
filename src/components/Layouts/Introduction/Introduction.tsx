@@ -1,13 +1,15 @@
 import { motion } from "framer-motion";
 
-import { FaCheck } from "react-icons/fa";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { useDispatch } from "react-redux";
 
-import { ChangeActive } from "../../ReduxToolkit/Slices/FaqSlice";
-import arrow from "../../assets/IMG/Arrow.jpg";
-import mainApe from "../../assets/apesIMG/MainApe.png";
-import { scrollToElement } from "../../customFunctions/scrollToElement";
+import { ChangeActive } from "../../../redux/slices/FaqSlice";
+import arrow from "../../../assets/IMG/Arrow.jpg";
+import mainApe from "../../../assets/apesIMG/MainApe.png";
+import { IntroductionDesc } from "../../../constans";
+import { scrollToElement } from "../../../customFunctions/scrollToElement";
+import { fadeInView } from "../../../utils/motion";
+import IntroductionSingleDesc from "../../common/IntroductionSingleDesc";
 
 const Introduction = () => {
 	const dispatch = useDispatch();
@@ -24,12 +26,7 @@ const Introduction = () => {
 				<section className="mt-24 flex w-full flex-col items-center px-5 md:px-7" id="Home">
 					<div className="w-full flex-row-reverse items-center justify-end md:flex  ">
 						<div className="relative flex flex-col text-center text-5xl font-bold text-white sm:text-6xl  md:ml-12  md:text-start md:text-7xl lg:text-8xl xl:ml-28 xl:mt-4 xl:text-9xl">
-							<motion.div
-								initial={{ y: -30, opacity: 0 }}
-								whileInView={{ y: 0, opacity: 1 }}
-								viewport={{ once: true, amount: 1 }}
-								transition={{ duration: 0.3, ease: "easeOut" }}
-							>
+							<motion.div {...fadeInView()}>
 								<h1>Start Making</h1>
 								<h1>Money With</h1>
 								<div className="mt-1 flex items-center justify-center">
@@ -72,30 +69,9 @@ const Introduction = () => {
 										<p className="ml-4 text-3xl text-Light-Green md:text-4xl">+550%</p>
 									</div>
 									<div className="flex grow flex-col justify-around lg:justify-around  ">
-										<div>
-											<div className="flex items-center">
-												<FaCheck className="rounded-full bg-white p-1 text-black" />
-												<p className=" ml-2 text-xs font-extralight md:text-sm lg:text-base">
-													41% + Average ROI
-												</p>
-											</div>
-										</div>
-										<div>
-											<div className="flex items-center">
-												<FaCheck className="rounded-full bg-white p-1 text-black" />
-												<p className="ml-2 text-xs font-extralight   md:text-sm lg:text-base">
-													Get Daily updates
-												</p>
-											</div>
-										</div>
-										<div>
-											<div className="flex items-center">
-												<FaCheck className="rounded-full bg-white p-1 text-black" />
-												<p className="ml-2 text-xs font-extralight md:text-sm lg:text-base">
-													NFT education program
-												</p>
-											</div>
-										</div>
+										{IntroductionDesc.map((item) => (
+											<IntroductionSingleDesc item={item} />
+										))}
 									</div>
 								</div>
 							</div>

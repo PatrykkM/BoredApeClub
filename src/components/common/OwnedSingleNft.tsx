@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import { ItemSold } from "../../ReduxToolkit/Slices/CurrentBalanceSlice";
-import { DataProccesing } from "../../ReduxToolkit/Slices/MyNftSlice";
-import { RemoveNFT } from "../../ReduxToolkit/Slices/MyNftSlice";
-import { RootState } from "../../ReduxToolkit/store";
-import { OwnedSingleNftProps } from "../../Types/PropsTypes";
-import { singleProduct } from "../../Types/common";
+import { ItemSold } from "../../redux/slices/CurrentBalanceSlice";
+import { RemoveNFT } from "../../redux/slices/MyNftSlice";
+import { DataProccesing } from "../../redux/slices/MyNftSlice";
+import { RootState } from "../../redux/store";
+import { singleProduct } from "../../types/common";
+import { OwnedSingleNftProps } from "../../types/propsTypes";
 
 const OwnedSingleNft = ({ id, NFT }: OwnedSingleNftProps) => {
 	const dispatch = useDispatch();

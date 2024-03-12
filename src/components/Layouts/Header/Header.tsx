@@ -1,19 +1,32 @@
 import { useState } from "react";
 import { LuMenu } from "react-icons/lu";
 import { useSelector } from "react-redux";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
-import { RootState } from "../../../ReduxToolkit/store";
 import { Nav } from "../../../constans";
-import DesktopNav from "../../common/DesktopNav";
+import { scrollToElement } from "../../../customFunctions/scrollToElement";
+import { RootState } from "../../../redux/store";
+import DesktopNav from "../../common/Navs/DesktopNav";
 import ActiveMobileNav from "./ActiveMobileNav";
 
 const Header = () => {
 	const location = useLocation();
+	const navigate = useNavigate();
 	const [active, setActive] = useState(false);
 	let CurrentBalance = useSelector((state: RootState) => state.CurrentBalanceSlice.Balance);
 
 	const handleActive = () => {
+		setActive(!active);
+	};
+
+	const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+		e.preventDefault();
+		const targetId = href;
+		if (location.pathname !== "/BoredApeClub/") {
+			navigate("/BoredApeClub/", { state: { scrollTo: targetId } });
+		} else {
+			scrollToElement(e, href);
+		}
 		setActive(!active);
 	};
 
@@ -39,6 +52,7 @@ const Header = () => {
 							handleActive={handleActive}
 							setActive={setActive}
 							CurrentBalance={CurrentBalance}
+							handleClick={handleClick}
 						/>
 						<div className="text-white">
 							<div className="hidden w-full justify-center md:flex">

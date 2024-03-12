@@ -1,13 +1,13 @@
 import { Provider } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import { store } from "./ReduxToolkit/store";
-import ErrorBuyingNFT from "./components/Layouts/ErrorBuyingNFT";
-import ErrorPage from "./components/Layouts/ErrorPage";
-import Footer from "./components/Layouts/Footer";
-import Header from "./components/Layouts/Header/Header";
-import MainPage from "./components/Layouts/MainPage";
-import MyNFTsPage from "./components/Layouts/MyNFTsPage";
+import ErrorBuyingNFT from "./components/layouts/ErrorBuyingNFT";
+import ErrorPage from "./components/layouts/ErrorPage";
+import Footer from "./components/layouts/Footer";
+import Header from "./components/layouts/Header/Header";
+import MainPage from "./components/layouts/MainPage";
+import MyNFTsPage from "./components/layouts/MyNFTsPage";
+import { store } from "./redux/store";
 
 function App() {
 	return (

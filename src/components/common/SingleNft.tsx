@@ -2,14 +2,14 @@ import { motion } from "framer-motion";
 
 import { useDispatch, useSelector } from "react-redux";
 
-import { DataProccesing } from "../../ReduxToolkit/Slices/AllNFTsSlice";
-import { ItemBought } from "../../ReduxToolkit/Slices/CurrentBalanceSlice";
-import { AddNFT } from "../../ReduxToolkit/Slices/MyNftSlice";
-import { ErrorBuyingNFT } from "../../ReduxToolkit/Slices/MyNftSlice";
-import { RootState } from "../../ReduxToolkit/store";
-import { SingleNftProps } from "../../Types/PropsTypes";
-import { singleProduct } from "../../Types/common";
 import useWindowWidth from "../../hooks/useWindowWidth";
+import { DataProccesing } from "../../redux/slices/AllNFTsSlice";
+import { ItemBought } from "../../redux/slices/CurrentBalanceSlice";
+import { AddNFT } from "../../redux/slices/MyNftSlice";
+import { ErrorBuyingNFT } from "../../redux/slices/MyNftSlice";
+import { RootState } from "../../redux/store";
+import { singleProduct } from "../../types/common";
+import { SingleNftProps } from "../../types/propsTypes";
 
 const SingleNft = ({ id, NFT, active }: SingleNftProps) => {
 	const dispatch = useDispatch();
