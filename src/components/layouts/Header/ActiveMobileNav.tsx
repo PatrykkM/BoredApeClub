@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { MobileNav } from "../../../constans";
-import { ActiveMobileNavProps } from "../../../typess/propsTypess";
+import { ActiveMobileNavProps } from "../../../types/propsTypes";
 import MobileNavItem from "../../common/Navs/MobileNavItem";
 
 const ActiveMobileNav = ({

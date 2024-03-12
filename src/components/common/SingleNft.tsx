@@ -8,8 +8,8 @@ import { ItemBought } from "../../redux/slices/CurrentBalanceSlice";
 import { AddNFT } from "../../redux/slices/MyNftSlice";
 import { ErrorBuyingNFT } from "../../redux/slices/MyNftSlice";
 import { RootState } from "../../redux/store";
-import { singleProduct } from "../../typess/common";
-import { SingleNftProps } from "../../typess/propsTypess";
+import { singleProduct } from "../../types/common";
+import { SingleNftProps } from "../../types/propsTypes";
 import { childVariants } from "../../utils/motion";
 
 const SingleNft = ({ id, NFT, active }: SingleNftProps) => {

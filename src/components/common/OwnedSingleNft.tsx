@@ -4,8 +4,8 @@ import { ItemSold } from "../../redux/slices/CurrentBalanceSlice";
 import { RemoveNFT } from "../../redux/slices/MyNftSlice";
 import { DataProccesing } from "../../redux/slices/MyNftSlice";
 import { RootState } from "../../redux/store";
-import { singleProduct } from "../../typess/common";
-import { OwnedSingleNftProps } from "../../typess/propsTypess";
+import { singleProduct } from "../../types/common";
+import { OwnedSingleNftProps } from "../../types/propsTypes";
 
 const OwnedSingleNft = ({ id, NFT }: OwnedSingleNftProps) => {
 	const dispatch = useDispatch();

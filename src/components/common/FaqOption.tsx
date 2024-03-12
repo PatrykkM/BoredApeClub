@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { ChangeActive } from "../../redux/slices/FaqSlice";
 import { RootState } from "../../redux/store";
-import { FaqOptionsProps } from "../../typess/propsTypess";
+import { FaqOptionsProps } from "../../types/propsTypes";
 
 const FaqOption = ({ Faq, id }: FaqOptionsProps) => {
 	const dispatch = useDispatch();

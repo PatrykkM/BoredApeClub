@@ -1,6 +1,6 @@
 import { FaCheck } from "react-icons/fa";
 
-import { IntroductionSingleDescProps } from "../../typess/propsTypess";
+import { IntroductionSingleDescProps } from "../../types/propsTypes";
 
 const IntroductionSingleDesc = ({ item }: IntroductionSingleDescProps) => {
 	return (

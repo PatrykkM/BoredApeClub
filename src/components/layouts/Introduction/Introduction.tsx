@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 
 import arrow from "../../../assets/IMG/Arrow.jpg";
 import mainApe from "../../../assets/apesIMG/MainApe.png";
-import { scrollToElement } from "../../../customFunctionss/scrollToElement";
+import { scrollToElement } from "../../../customFunctions/scrollToElement";
 import { ChangeActive } from "../../../redux/slices/FaqSlice";
 import { fadeInView } from "../../../utils/motion";
 import NftClubDesc from "./NftClubDesc";

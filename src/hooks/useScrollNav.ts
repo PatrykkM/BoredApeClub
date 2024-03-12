@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { scrollToElement } from "../customFunctionss/scrollToElement";
+import { scrollToElement } from "../customFunctions/scrollToElement";
 
 const useScrollNav = () => {
 	const [active, setActive] = useState(false);
