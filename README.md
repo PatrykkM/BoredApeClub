@@ -1,4 +1,4 @@
-# Hello 👋
+# Hello
 
 Welcome to the Bored Ape NFT Shop, your go-to platform for diving into the exciting world of NFTs. This application is a beacon of modern design and functionality, offering a seamless, responsive experience across all devices. Crafted with meticulous attention to detail, it incorporates Redux-Persist for some states management, ensuring that your acquisitions and preferences are preserved, even if you leave page for hours ;D
 
