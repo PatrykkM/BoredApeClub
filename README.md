@@ -12,7 +12,7 @@ Welcome to the Bored Ape NFT Shop, your go-to platform for diving into the excit
 
 📚 **Advanced Features**: Dive into a realm filled with intriguing scripts and functionalities designed to enrich your exploration and interaction with the NFT world.
 
-🧹 Clean Code & Type Safety: My commitment to clean code practices and type safety ensures a seamless and secure user experience, reflecting my high development standards.
+🧹 **Clean Code & Type Safety**: My commitment to clean code practices and type safety ensures a seamless and secure user experience, reflecting my high development standards.
 
 ## Technologies
 
