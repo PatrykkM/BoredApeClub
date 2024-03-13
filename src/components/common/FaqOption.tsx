@@ -12,7 +12,7 @@ const FaqOption = ({ Faq, id }: FaqOptionsProps) => {
 	const activeNumber = useSelector((state: RootState) => state.FAQSlice.ActiveNumber);
 	return (
 		<div className="mb-3 flex flex-col border-b border-uninportant-text text-xl font-light text-Darker-White md:text-2xl">
-			<div className="flex  w-full items-center justify-between">
+			<div className="flex w-full items-center justify-between">
 				<h4 className="mb-1">{Faq.Title}</h4>
 				<div className="mb-1 cursor-pointer text-lg">
 					{activeNumber === id + 1 ? (

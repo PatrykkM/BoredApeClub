@@ -1,5 +1,5 @@
-import { IntroductionDesc } from "../../../constans";
-import IntroductionSingleDesc from "../../common/IntroductionSingleDesc";
+import { IntroductionDesc } from "../../../../constans";
+import IntroductionSingleDesc from "../../../common/IntroductionSingleDesc";
 
 const NftClubDesc = () => {
 	return (
@@ -12,7 +12,7 @@ const NftClubDesc = () => {
 					</div>
 					<p className="ml-4 text-3xl text-Light-Green md:text-4xl">+550%</p>
 				</div>
-				<div className="flex grow flex-col justify-around lg:justify-around  ">
+				<div className="flex grow flex-col justify-around lg:justify-around">
 					{IntroductionDesc.map((item, id) => (
 						<IntroductionSingleDesc item={item} key={id} />
 					))}

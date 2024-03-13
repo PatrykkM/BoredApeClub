@@ -63,17 +63,17 @@ const SingleNft = ({ id, NFT, active }: SingleNftProps) => {
 
 	return (
 		<motion.div
-			className={`mt-4 w-1/2 max-w-76  md:w-1/3 md:p-4  ${(id + 1) % 2 === 0 ? `pl-2` : `pr-2`} ${
-				(id > 5 && active && width < 1280) || (id > 7 && active && width >= 1280) ? `hidden` : null
+			className={`mt-4 w-1/2 max-w-76 md:w-1/3 md:p-4 ${(id + 1) % 2 === 0 ? `pl-2` : `pr-2`} ${
+				(id > 5 && active && width < 1280) || (id > 7 && active && width >= 1280) ? `hidden` : ``
 			} `}
 			variants={childVariants}
 		>
-			<div className="flex w-full  flex-col rounded-lg bg-Lighter-Grey p-2 transition-all ">
+			<div className="flex w-full  flex-col rounded-lg bg-Lighter-Grey p-2 transition-all">
 				<img
 					src={NFT.Img}
-					className="h-36 w-full rounded-lg object-cover  transition-all xs:h-auto  md:max-h-64 "
+					className="h-36 w-full rounded-lg object-cover transition-all xs:h-auto  md:max-h-64"
 				/>
-				<div className="mt-3 flex w-full items-center justify-between  text-sm text-white md:text-base ">
+				<div className="mt-3 flex w-full items-center justify-between  text-sm text-white md:text-base">
 					<p className="font-light">{NFT.ApeID}</p>
 					<p> {(NFT.Price / 3500).toFixed(1)}ETH</p>
 				</div>

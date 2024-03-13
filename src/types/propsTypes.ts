@@ -51,3 +51,6 @@ export interface IntroductionSingleDescProps {
 		desc: string;
 	};
 }
+export interface InsightsProps {
+	handleClick: (e: React.MouseEvent<HTMLButtonElement>, href: string) => void;
+}

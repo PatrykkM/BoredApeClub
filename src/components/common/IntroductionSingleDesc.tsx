@@ -8,7 +8,7 @@ const IntroductionSingleDesc = ({ item }: IntroductionSingleDescProps) => {
 			<div>
 				<div className="flex items-center">
 					<FaCheck className="rounded-full bg-white p-1 text-black" />
-					<p className=" ml-2 text-xs font-extralight md:text-sm lg:text-base">{item.desc}</p>
+					<p className="ml-2 text-xs font-extralight md:text-sm lg:text-base">{item.desc}</p>
 				</div>
 			</div>
 		</>

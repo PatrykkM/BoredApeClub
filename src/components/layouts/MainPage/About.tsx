@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 
 import { useState } from "react";
 
-import { optionDesc } from "../../constans";
-import { fadeInView } from "../../utils/motion";
-import AboutOption from "../common/AboutOption";
+import { optionDesc } from "../../../constans";
+import { fadeInView } from "../../../utils/motion";
+import AboutOption from "../../common/AboutOption";
 
 const About = () => {
 	const [activeOption, setActiveOption] = useState(1);
@@ -15,7 +15,7 @@ const About = () => {
 	};
 
 	return (
-		<div className=" mt-16 w-full items-center bg-Light-Grey md:flex md:justify-center" id="About">
+		<div className="mt-16 w-full items-center bg-Light-Grey md:flex md:justify-center" id="About">
 			<section className="flex w-full items-center justify-center bg-Light-Grey  ">
 				<div className="flex w-full max-w-lg flex-col items-center justify-center px-5 md:my-6  md:max-w-7xl md:flex-row  md:px-7 lg:justify-between">
 					<div className="mt-6 flex flex-col self-start  md:max-w-sm lg:max-w-xl">
@@ -39,23 +39,23 @@ const About = () => {
 								/>
 							))}
 						</div>
-						<div className="hidden flex-col font-light  text-uninportant-text md:flex  ">
+						<div className="hidden flex-col font-light text-uninportant-text md:flex">
 							<p>{ActiveOption()?.desc}</p>
 						</div>
 					</div>
-					<div className="hidden grow items-center md:ml-5  md:flex md:justify-end ">
+					<div className="hidden grow items-center md:ml-5 md:flex md:justify-end">
 						<img
 							src={ActiveOption()?.img}
-							className="my-6 grow rounded-3xl object-cover  md:w-full md:max-w-md "
+							className="my-6 grow rounded-3xl object-cover md:w-full md:max-w-md "
 						/>
 					</div>
-					<div className="flex flex-col  font-light text-uninportant-text  ">
+					<div className="flex flex-col  font-light text-uninportant-text">
 						<div className="md:hidden">
 							<p>{ActiveOption()?.desc}</p>
-							<div className="flex grow items-center md:ml-5 md:justify-end ">
+							<div className="flex grow items-center md:ml-5 md:justify-end">
 								<img
 									src={ActiveOption()?.img}
-									className="my-6 grow rounded-3xl object-cover  md:w-full md:max-w-md "
+									className="my-6 grow rounded-3xl object-cover md:w-full md:max-w-md "
 								/>
 							</div>
 						</div>

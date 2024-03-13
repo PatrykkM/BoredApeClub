@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 
-import { RootState } from "../../redux/store";
-import OwnedSingleNft from "../common/OwnedSingleNft";
+import { RootState } from "../../../redux/store";
+import OwnedSingleNft from "../../common/OwnedSingleNft";
 
 const MyNFTsPage = () => {
 	const MyNFTs = useSelector((state: RootState) => state.HandleNFT.products);
@@ -13,11 +13,11 @@ const MyNFTsPage = () => {
 
 	return (
 		<section
-			className="mt-[64px]  flex  min-h-screen  w-full   justify-center bg-Light-Grey md:mt-[72px]"
+			className="mt-[64px] flex min-h-screen w-full justify-center bg-Light-Grey md:mt-[72px]"
 			id="NFTs"
 		>
 			<div
-				className={`relative flex w-full max-w-lg  flex-col   items-center  p-5 md:max-w-7xl md:px-2 ${
+				className={`relative flex w-full max-w-lg flex-col items-center p-5 md:max-w-7xl md:px-2 ${
 					MyNFTs.length <= 0 ? `justify-center` : ` justify-start`
 				}`}
 			>
@@ -25,9 +25,9 @@ const MyNFTsPage = () => {
 					{MyNFTs.length <= 0 ? `You dont have any NFT` : `Your NFTs`}
 				</h2>
 				<p className="mt-4 text-center text-sm font-light leading-6 text-uninportant-text md:max-w-md md:text-base">
-					{MyNFTs.length <= 0 ? `Go to home page and buy your first NFT! ` : `These are your NFTs`}
+					{MyNFTs.length <= 0 ? `Go to home page and buy your first NFT!` : `These are your NFTs`}
 				</p>
-				<div className=" mb-12  mt-3 flex w-full flex-wrap justify-center ">
+				<div className="mb-12  mt-3 flex w-full flex-wrap justify-center">
 					{MyNFTs.map((NFT, id) => (
 						<OwnedSingleNft NFT={NFT} id={id} />
 					))}

@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 
 import { useDispatch } from "react-redux";
 
-import arrow from "../../../assets/IMG/Arrow.jpg";
-import mainApe from "../../../assets/apesIMG/MainApe.png";
-import { scrollToElement } from "../../../customFunctions/scrollToElement";
-import { ChangeActive } from "../../../redux/slices/FaqSlice";
-import { fadeInView } from "../../../utils/motion";
+import arrow from "../../../../assets/IMG/Arrow.jpg";
+import mainApe from "../../../../assets/apesIMG/MainApe.png";
+import { scrollToElement } from "../../../../customFunctions/scrollToElement";
+import { ChangeActive } from "../../../../redux/slices/FaqSlice";
+import { fadeInView } from "../../../../utils/motion";
 import NftClubDesc from "./NftClubDesc";
 import ScrollDownArrow from "./ScrollDownArrow";
 
@@ -36,7 +36,7 @@ const Introduction = () => {
 								</div>
 							</motion.div>
 						</div>
-						<div className="flex flex-col items-center md:w-1/3 md:max-w-80 md:items-start  ">
+						<div className="flex flex-col items-center md:w-1/3 md:max-w-80 md:items-start">
 							<img src={arrow} className=" hidden w-full md:block" />
 							<p className="mt-7 max-w-80 text-center text-uninportant-text md:mt-3 md:text-left">
 								Interested in boosting your monthly portfolio by as much as 700-1000% Buy our NFTs
@@ -51,13 +51,13 @@ const Introduction = () => {
 						</div>
 					</div>
 				</section>
-				<section className=" flex h-auto w-full flex-col justify-between px-5 md:mt-7 md:flex-row  ">
-					<div className="relative flex md:w-2/5  ">
-						<img src={mainApe} alt="Image of BoredApe" className=" z-10 object-cover " />
+				<section className="flex h-auto w-full flex-col justify-between px-5 md:mt-7 md:flex-row">
+					<div className="relative flex md:w-2/5">
+						<img src={mainApe} alt="Image of BoredApe" className=" z-10 object-cover" />
 						<div className="absolute bottom-0 left-1/2 h-4/5 w-full -translate-x-1/2 transform rounded-lg bg-Img-background"></div>
 					</div>
-					<div className="mt-6 flex    grow  md:mt-0 md:items-end">
-						<div className="flex grow  md:h-4/5 md:w-full  md:items-center md:justify-around ">
+					<div className="mt-6 flex grow md:mt-0 md:items-end">
+						<div className="flex grow md:h-4/5 md:w-full  md:items-center md:justify-around">
 							<NftClubDesc />
 							<ScrollDownArrow />
 						</div>

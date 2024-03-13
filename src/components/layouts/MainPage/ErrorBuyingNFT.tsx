@@ -1,7 +1,7 @@
 import { FaMoneyBillWave } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
-import { RootState } from "../../redux/store";
+import { RootState } from "../../../redux/store";
 
 const ErrorBuyingNFT = () => {
 	let NoMoneyError = useSelector((state: RootState) => state.HandleNFT.error.NoMoney);
