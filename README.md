@@ -26,6 +26,6 @@ I harnessed a dynamic stack of modern technologies to build an NFT marketplace t
 
 [![Framer](https://img.shields.io/badge/Framer-black?style=for-the-badge&logo=framer&logoColor=blue)](https://www.framer.com/)
 
-## Invitation to Explore
+## Feedback and Collaboration
 
-Embark on an adventure through the Bored Ape NFT Shop and discover the boundless creativity and innovation within. My platform is designed to captivate, engage, and inspire and show my skills. Explore the NFTs available and find your next digital treasure.
+As always, I am eager to hear your thoughts on my work. If you have any feedback or are interested in collaboration, please don't hesitate to reach out or open an issue on this repository. Your insights and perspectives are invaluable to me.
