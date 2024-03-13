@@ -11,10 +11,14 @@ const myNFTPersistConfig = {
 	key: "HandleNFT",
 	storage,
 };
+const CurrentBalanceConfig = {
+	key: "CurrentBalance",
+	storage,
+};
 
 const persistedMyNFTReducer = persistReducer(myNFTPersistConfig, MyNFTSlice.reducer);
 const persistedCurrentBalanceSlice = persistReducer(
-	myNFTPersistConfig,
+	CurrentBalanceConfig,
 	CurrentBalanceSlice.reducer,
 );
 
